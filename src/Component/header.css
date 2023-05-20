@@ -1,0 +1,16 @@
+.header{
+    color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.headerLink{
+    color: gray;
+    text-decoration: none;
+}
+.headerButton{
+    color: white;
+    background-color: gray;
+    border: none;
+    padding: 2px 10px;
+}
