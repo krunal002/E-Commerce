@@ -129,7 +129,7 @@ const Filters = () => {
           type="radio"
           name="priceSort"
           value="lowToHigh"
-          //   onClick={sortPrice}
+          onClick={(e) => dispatch({type:"sort", payload:e.target.value})}
         />
         <label htmlFor="kids">price - low to high</label>
       </div>
@@ -138,7 +138,7 @@ const Filters = () => {
           type="radio"
           name="priceSort"
           value="highToLow"
-          //   onClick={sortPrice}
+          onClick={(e) => dispatch({type:"sort", payload:e.target.value})}
         />
         <label htmlFor="kids">price - high to low</label>
       </div>

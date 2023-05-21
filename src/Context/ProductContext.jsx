@@ -3,16 +3,20 @@ import { createContext, useEffect, useReducer, useState } from "react";
 export const ProductContext = createContext();
 
 export const ProductContextHandler = ({ children }) => {
-  // const [ productData, setProductData] = useState([])
   const [tempData, setTempData] = useState([]);
 
   const reducerFun = (state, action) => {
     switch (action.type) {
       case "price":
         return { ...state, priceFilterValue: action.payload };
-        
-        case "category": return {...state, categoryFilter: action.payload }
-        case "rating": return {...state, ratingFilter: action.payload }
+      case "category":
+        return { ...state, categoryFilter: action.payload };
+      case "rating":
+        return { ...state, ratingFilter: action.payload };
+      case "sort":
+        return { ...state, sortPrice: action.payload };
+      default:
+        return state;
     }
   };
 
@@ -20,6 +24,7 @@ export const ProductContextHandler = ({ children }) => {
     priceFilterValue: 0,
     categoryFilter: "all",
     ratingFilter: "all",
+    sortPrice: "none",
   });
 
   const getData = async () => {
@@ -43,13 +48,26 @@ export const ProductContextHandler = ({ children }) => {
           ({ sellingPrice }) => sellingPrice < Number(state.priceFilterValue)
         );
 
-    const categoryData = state.categoryFilter==="all"
-        ? priceData
-        : priceData.filter( ({category}) => category===state.categoryFilter )
+  const categoryData =
+    state.categoryFilter === "all"
+      ? priceData
+      : priceData.filter(({ category }) => category === state.categoryFilter);
 
-    const productData = state.ratingFilter==="all"
-        ? categoryData
-        : categoryData.filter( ({rating}) => rating > Number(state.ratingFilter) )
+  const ratingData =
+    state.ratingFilter === "all"
+      ? categoryData
+      : categoryData.filter(
+          ({ rating }) => rating > Number(state.ratingFilter)
+        );
+
+  const sortedData =
+    state.sortPrice === "none"
+      ? ratingData
+      : state.sortPrice === "lowToHigh"
+      ? ratingData.sort((a, b) => a.sellingPrice - b.sellingPrice)
+      : ratingData.sort((a, b) => b.sellingPrice - a.sellingPrice);
+
+  const productData = sortedData;
 
   return (
     <div>

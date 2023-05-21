@@ -23,7 +23,7 @@ const Store = () => {
         </div>
 
         <div className="rightContainer">
-        <small>Total products : {productData.length}</small>
+        <small>Number of products : {productData.length}</small>
           <div className="products">
           {productData.map((product) => {
             {/* const isCartProduct = cartProduct.find(
