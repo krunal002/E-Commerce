@@ -1,0 +1,22 @@
+.filterHeader {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading {
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+/* Price Range */
+.priceRange .input {
+  width: 90%;
+  accent-color: gray;
+}
+.displayPrice {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}

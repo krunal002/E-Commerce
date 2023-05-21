@@ -1,4 +1,5 @@
 import "./store.css"
+import Filters from "../Component/Filters/filters"
 
 import { Link } from "react-router-dom"
 import { useContext } from "react";
@@ -13,10 +14,16 @@ const Store = () => {
         <h2>Store is Ready</h2>
         <Link to="/" className="headerLink">Home</Link>
         <hr></hr>
-        <div>
+
+        <div className="container">
+
+        <div className="leftContainer"> 
+          <Filters />
+        </div>
 
         <div className="rightContainer">
-        {productData.map((product) => {
+          <div className="products">
+          {productData.map((product) => {
             {/* const isCartProduct = cartProduct.find(
               (reqProduct) => reqProduct.id === product.id
             );
@@ -63,6 +70,7 @@ const Store = () => {
               </div>
             );
           })}
+          </div>
           </div>
         </div>
     </div>

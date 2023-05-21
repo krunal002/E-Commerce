@@ -1,8 +1,9 @@
 import "./header.css"
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Header = () => {
+  const navigate = useNavigate()
     
     return <div>
     <div className="header">
@@ -15,6 +16,7 @@ const Header = () => {
       <div>
         <button 
           className="headerButton"  
+          onClick={() => navigate("/login")}
         >Login</button>
       </div>
 

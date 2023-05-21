@@ -4,6 +4,7 @@
   }
   .container {
     display: flex;
+    padding: 1rem;
   }
   .leftContainer {
     text-align: left;
@@ -16,6 +17,12 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0.3rem;
+  }
+  .products{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 900px;
   }
   .storeProducts {
     background-color: white;
