@@ -1,31 +1,46 @@
+import { useContext } from "react";
+
 import "./filters.css";
+import { ProductContext } from "../../E-Commerse";
+
 const Filters = () => {
+  const { 
+    dispatch,
+    state
+} = useContext(ProductContext);
+
+    console.log(state);
+
   return (
     <div className="filters">
       <div className="filterHeader">
         <h2>Filters </h2>
-        <div> <button>Clear</button></div>
-       
+        <div>
+          <button>Clear</button>
+        </div>
       </div>
 
+{/* priceRange */}
       <div className="priceRange">
         <div className="heading">Price</div>
         <input
           type="range"
           className="input"
-          defaultValue={0}
+          defaultValue={state.priceFilterValue}
           step="100"
-          min="100"
+          min="0"
           max="1000"
-          //   onChange={priceChangeHandler}
+          onChange={(e) => dispatch({type : "price", payload: e.target.value})}
         />
         <div className="displayPrice">
           <small>100</small>
           <small>500</small>
           <small>1000</small>
         </div>
+        <p>value {state.priceFilterValue}</p>
       </div>
 
+{/* categoryFilter */}
       <div className="categoryFilter">
         <div className="heading">Category</div>
         <div>
@@ -33,7 +48,7 @@ const Filters = () => {
             type="radio"
             name="categoryFil"
             value="all"
-            // onClick={categoryHandler}
+            onClick={(e) => dispatch({type:"category", payload:e.target.value})}
           />
           <label htmlFor="men">All</label>
         </div>
@@ -42,7 +57,7 @@ const Filters = () => {
             type="radio"
             name="categoryFil"
             value="men"
-            // onClick={categoryHandler}
+            onClick={(e) => dispatch({type:"category", payload:e.target.value})}
           />
           <label htmlFor="men">men</label>
         </div>
@@ -51,7 +66,7 @@ const Filters = () => {
             type="radio"
             name="categoryFil"
             value="women"
-            // onClick={categoryHandler}
+            onClick={(e) => dispatch({type:"category", payload:e.target.value})}
           />
           <label htmlFor="women">women</label>
         </div>
@@ -60,12 +75,13 @@ const Filters = () => {
             type="radio"
             name="categoryFil"
             value="kids"
-            // onClick={categoryHandler}
+            onClick={(e) => dispatch({type:"category", payload:e.target.value})}
           />
           <label htmlFor="kids">kids</label>
         </div>
       </div>
 
+{/* ratingFilter */}
       <div className="ratingFilter">
         <div className="heading">Rating</div>
         <div>
@@ -73,7 +89,7 @@ const Filters = () => {
             type="radio"
             name="ratingFil"
             value="1"
-            // onClick={ratingHandler}
+            onClick={(e) => dispatch({type:"rating", payload:e.target.value})}
           />
           <label htmlFor="kids">1 star & above</label>
         </div>
@@ -82,7 +98,7 @@ const Filters = () => {
             type="radio"
             name="ratingFil"
             value="2"
-            // onClick={ratingHandler}
+            onClick={(e) => dispatch({type:"rating", payload:e.target.value})}
           />
           <label htmlFor="kids">2 star & above</label>
         </div>
@@ -91,7 +107,7 @@ const Filters = () => {
             type="radio"
             name="ratingFil"
             value="3"
-            // onClick={ratingHandler}
+            onClick={(e) => dispatch({type:"rating", payload:e.target.value})}
           />
           <label htmlFor="kids">3 star & above</label>
         </div>
@@ -100,12 +116,13 @@ const Filters = () => {
             type="radio"
             name="ratingFil"
             value="4"
-            // onClick={ratingHandler}
+            onClick={(e) => dispatch({type:"rating", payload:e.target.value})}
           />
           <label htmlFor="kids">4 star & above</label>
         </div>
       </div>
 
+{/* priceSort */}
       <div className="priceSort">
         <div className="heading">Sort by</div>
         <input

@@ -2,26 +2,28 @@ import "./store.css"
 import Filters from "../Component/Filters/filters"
 
 import { Link } from "react-router-dom"
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { ProductContext } from "../E-Commerse";
 
 const Store = () => {
-    const { data } = useContext(ProductContext);
-    const productData = data.products;
-
+    const { productData } = useContext(ProductContext);
+    console.log(productData)
+ 
     return <div>
         <h2>Store is Ready</h2>
         <Link to="/" className="headerLink">Home</Link>
         <hr></hr>
 
         <div className="container">
+      
 
         <div className="leftContainer"> 
           <Filters />
         </div>
 
         <div className="rightContainer">
+        <small>Total products : {productData.length}</small>
           <div className="products">
           {productData.map((product) => {
             {/* const isCartProduct = cartProduct.find(
@@ -42,7 +44,7 @@ const Store = () => {
                   />
                 </Link>
 
-                <p>Price : ₹{product.price}</p>
+                <p>Price : ₹{product.sellingPrice} <span className="printedPrice">{product.price}</span></p>
                 <p>Category : {product.category}</p>
                 <p>Rating : {product.rating}/5</p>
                 <button 

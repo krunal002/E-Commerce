@@ -34,6 +34,10 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
   }
+  .printedPrice{
+    color: gray;
+    text-decoration: line-through;
+  }
   .storeProducts button {
     width: 100%;
     height: 10%;
