@@ -1,14 +1,12 @@
 import "./store.css"
-import Filters from "../Component/Filters/filters"
+import Filters from "../../Component/Filters/filters"
+import { ProductContext } from "../../E-Commerse";
 
 import { Link } from "react-router-dom"
 import { useContext, useEffect } from "react";
 
-import { ProductContext } from "../E-Commerse";
-
 const Store = () => {
-    const { productData } = useContext(ProductContext);
-    console.log(productData)
+    const { productData, cartHandler } = useContext(ProductContext);
  
     return <div>
         <h2>Store is Ready</h2>
@@ -60,7 +58,7 @@ const Store = () => {
 
                 <button
                   className="cartButton"
-                //   onClick={() => cartHandler(product)}
+                  onClick={() => cartHandler(product)}
                 >
                   {/* {isCartProduct ? (
                     <Link to="/cart">Go to Cart</Link>

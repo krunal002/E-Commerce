@@ -8,20 +8,24 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "fiction",
+    pic:"https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2018/06/men-shopping-masculine.jpg?quality=90&strip=all&ssl=1",
+    categoryName: "men",
     description:
-      "literature in the form of prose, especially novels, that describes imaginary events and people",
+      "Being perfectly well-dressed gives one a tranquillity that no religion can bestow.",
   },
   {
     _id: uuid(),
-    categoryName: "non-fiction",
+    pic:"https://tse4.mm.bing.net/th?id=OIP.0X0V7n6Rp-6mt2MK8_ZW-gHaE8&pid=Api&P=0&h=180",
+    categoryName: "kids",
     description:
-      "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
+      "Make your baby more unique with our best fabric and latest clothes designs."
   },
   {
     _id: uuid(),
-    categoryName: "horror",
+    pic:"https://www.rakuten.com/blog/wp-content/uploads/2016/08/how-to-shop-end-of-summer-sales-like-a-pro.jpg",
+    categoryName: "women",
     description:
-      "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
+      "Every woman deserves a little glamour in her life—and we can help you get it!",
   },
+  
 ];

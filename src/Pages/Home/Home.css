@@ -1,0 +1,42 @@
+.categoryContainer{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1rem;
+    max-width: 70%;
+    background-color: lightgray;
+}
+
+.showCategory{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 0.5rem;
+}
+
+.categoryProductContainer{
+    background-color: wheat;
+    border: 1px solid;
+    padding: 1rem;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px 4px;
+}
+
+.storeRoute{
+    background-color: wheat;
+    border: 1px solid;
+    margin: 1rem 0;
+    padding: 3rem;
+    cursor: pointer;
+}
+
+.collectionContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+}
+.collectionCategory{
+    background-color: wheat;
+    border: 1px solid;
+    padding: 2.5rem 0;
+    cursor: pointer;
+}

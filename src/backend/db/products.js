@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    id: uuid(),
+    id: "45",
     name: "Classic Denim Shirt: Dark Blue",
     category: "men",
     isStarred: false,

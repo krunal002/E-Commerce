@@ -9,8 +9,6 @@ const Filters = () => {
     state
 } = useContext(ProductContext);
 
-    console.log(state);
-
   return (
     <div className="filters">
       <div className="filterHeader">

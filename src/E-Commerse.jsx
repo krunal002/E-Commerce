@@ -1,14 +1,17 @@
-import Cart from "./Pages/Cart"
-import Home from "./Pages/Home"
-import LoginPage from "./Pages/LoginPage"
-import Store from "./Pages/Store"
-import Wishlist from "./Pages/Wishlist"
+import Cart from "./Pages/Cart/Cart"
+import Home from "./Pages/Home/Home"
+import LoginPage from "./Pages/Login/LoginPage"
+import Store from "./Pages/Store/Store"
+import Wishlist from "./Pages/Wishlist/Wishlist"
 
 import { Routes, Route } from "react-router-dom"
 import Mockman from "mockman-js"
 
 import { ProductContext } from "./Context/ProductContext";
+import { CategoryContext } from "./Context/CategoryContext"
+
 export { ProductContext }
+export { CategoryContext }
 
 const ECommerse = () => {
     return <div>

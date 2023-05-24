@@ -33,6 +33,7 @@ export const ProductContextHandler = ({ children }) => {
       // setData(await response.json())
       const data = await response.json();
       setTempData(data.products);
+      
     } catch (e) {
       console.log(e);
     }
@@ -69,11 +70,26 @@ export const ProductContextHandler = ({ children }) => {
 
   const productData = sortedData;
 
+  // Cart Handler 
+
+  const cartHandler = async ( product ) => {
+    // try{
+    //   const res = await fetch("/api/user/cart",{
+    //     method:'POST',
+    //     body: JSON.stringify(product)
+    //   })
+
+    //   console.log(await res.json())
+      
+    // } catch(e) { console.log(e)}
+  }
+
   return (
     <div>
       <ProductContext.Provider
         value={{
           productData,
+          cartHandler,
           state,
           dispatch,
         }}
