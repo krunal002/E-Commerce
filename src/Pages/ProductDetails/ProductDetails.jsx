@@ -10,13 +10,13 @@ const ProductDetails = () => {
   const getProductDetails = async () => {
     const res = await fetch(url);
     const reqData = await res.json();
-    setProductDetailsData(reqData);
+    setProductDetailsData(reqData.product);
   };
   useEffect(() => {
     getProductDetails();
   });
 
-  const { _id, image, sellingPrice, category, rating, price } = productDetailsData.product;
+  const { _id, image, sellingPrice, category, rating, price } = productDetailsData;
   return (
     <>
       <h1>{productId}</h1>

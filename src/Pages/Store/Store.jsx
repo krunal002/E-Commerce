@@ -28,7 +28,7 @@ const Store = () => {
           {productData.map((product) => {
             return (
               <div key={product._id} className="storeProducts">
-                <Link to={`/product-details/${product.id}`}>
+                <Link to={`/details/${product._id}`}>
                   <img
                     src={product.image}
                     alt="clothingImage"
@@ -39,7 +39,7 @@ const Store = () => {
                 <p>Price : ₹{product.sellingPrice} <span className="printedPrice">{product.price}</span></p>
                 <p>Category : {product.category}</p>
                 <p>Rating : {product.rating}/5</p>
-                <p><Link to={`/details/${product._id}`}>Details</Link></p>
+                {/* <p><Link to={`/details/${product._id}`}>Details</Link></p> */}
 
                 <button 
                     onClick={() => addToWishlistHandler(product)}
