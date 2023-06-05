@@ -1,6 +1,6 @@
 import "./store.css"
 import Filters from "../../Component/Filters/filters"
-import { CartContext, ProductContext } from "../../E-Commerse";
+import { CartContext, ProductContext, WishlistContext } from "../../E-Commerse";
 
 import { Link } from "react-router-dom"
 import { useContext } from "react";
@@ -8,6 +8,7 @@ import { useContext } from "react";
 const Store = () => {
     const { productData } = useContext(ProductContext);
     const { addToCartHandler } = useContext(CartContext)
+    const { addToWishlistHandler } = useContext(WishlistContext)
  
     return <div>
         <h2>Store is Ready</h2>
@@ -41,7 +42,7 @@ const Store = () => {
                 <p><Link to={`/details/${product._id}`}>Details</Link></p>
 
                 <button 
-                    // onClick={() => wishlisthandler(product)}
+                    onClick={() => addToWishlistHandler(product)}
                 >
                   Add to wishlist
                 </button>

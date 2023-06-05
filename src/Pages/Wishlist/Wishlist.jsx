@@ -3,10 +3,9 @@ import { Link } from "react-router-dom"
 import { WishlistContext } from "../../E-Commerse";
 
 const Wishlist = ( ) => {
-    const { WishlistData } = useContext(WishlistContext)
-    // const wishlistProductData = WishlistData;
+    const { data_Wishlist } = useContext(WishlistContext)
     const clickHandler = () => {
-    console.log(WishlistData);
+    console.log(data_Wishlist);
     }
 
     return <div>
@@ -14,7 +13,7 @@ const Wishlist = ( ) => {
         <button onClick={clickHandler}>click</button>
         <Link to="/" className="headerLink">Home</Link>
 
-        {[].map((product) => {
+        {data_Wishlist.map((product) => {
             return (
               <div key={product.id} className="storeProducts">
                 <Link to={`/product-details/${product.id}`}>

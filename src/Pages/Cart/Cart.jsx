@@ -5,8 +5,6 @@ import { CartContext } from "../../E-Commerse";
 const Cart = () => {
   const { cartData } = useContext(CartContext);
 
-  const cartProductData = cartData.cart;
-
   const clickHandle = () => {
     console.log("cart", cartData);
   };
@@ -18,7 +16,7 @@ const Cart = () => {
         Home
       </Link>
 
-      {cartProductData.map((product) => {
+      {cartData.map((product) => {
         return (
           <div key={product.id} className="storeProducts">
             <Link to={`/product-details/${product.id}`}>

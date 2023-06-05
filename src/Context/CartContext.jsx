@@ -10,13 +10,14 @@ export const CartContextHandler = ({ children }) => {
             const res = await fetch("/api/user/cart", {
                 headers: { authorization : encodedToken }
               })
-            setCartData( await res.json() )
+              const reqData = await res.json();
+            setCartData( reqData.cart )
         } catch(e){ console.log("error") }
     }
 
     useEffect(() => {
         getCartdata()
-    },[])
+    })
 
     const addToCartHandler = async ( product ) => {
         try{
