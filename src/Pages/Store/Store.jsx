@@ -26,7 +26,7 @@ const Store = () => {
           <div className="products">
           {productData.map((product) => {
             return (
-              <div key={product.id} className="storeProducts">
+              <div key={product._id} className="storeProducts">
                 <Link to={`/product-details/${product.id}`}>
                   <img
                     src={product.image}
@@ -38,6 +38,8 @@ const Store = () => {
                 <p>Price : ₹{product.sellingPrice} <span className="printedPrice">{product.price}</span></p>
                 <p>Category : {product.category}</p>
                 <p>Rating : {product.rating}/5</p>
+                <p><Link to={`/details/${product._id}`}>Details</Link></p>
+
                 <button 
                     // onClick={() => wishlisthandler(product)}
                 >

@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    id: "45",
+    _id: "45",
     name: "Classic Denim Shirt: Dark Blue",
     category: "men",
     isStarred: false,
@@ -18,7 +18,7 @@ export const products = [
       "https://th.bing.com/th/id/OIP.8tyHySloL5kTcIgXRCiaHwHaKC?pid=ImgDet&rs=1"
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "",
     category: "women",
     isStarred: false,
@@ -29,7 +29,7 @@ export const products = [
       "https://s-media-cache-ak0.pinimg.com/originals/19/72/b3/1972b3fbc96088a7a636618a1b93760a.jpg"
   },
   {
-    id: uuid(),
+    _id: uuid(),
     name: "Solids: Light Blue Shirt",
     category: "men",
     isStarred: true,
@@ -40,7 +40,7 @@ export const products = [
       "https://n4.sdlcdn.com/imgs/a/1/q/Bossini-Blue-Solids-Shirt-SDL348096102-1-7b220.jpg"
   },
   {
-    id: uuid(),
+    _id: uuid(),
     category: "men",
     isStarred: false,
     sellingPrice: 999,
@@ -50,7 +50,7 @@ export const products = [
       "http://3.bp.blogspot.com/-cc10rNKW514/Udo1oQT5vdI/AAAAAAAAAM0/fcyYAiS9mK4/s1600/Mens-Casual-Clothing-Styles2.jpg"
   },
   {
-    id: uuid(),
+    _id: uuid(),
     category: "kids",
     isStarred: false,
     sellingPrice: 799,
@@ -60,7 +60,7 @@ export const products = [
       "https://static.parenting.com/wp-content/uploads/migrated/oxfords-holiday-fashion-plaid-dress.jpg"
   },
   {
-    id: uuid(),
+    _id: uuid(),
     category: "women",
     isStarred: false,
     sellingPrice: 669,
@@ -70,7 +70,7 @@ export const products = [
       "https://s-media-cache-ak0.pinimg.com/originals/19/72/b3/1972b3fbc96088a7a636618a1b93760a.jpg"
   },
   {
-    id: uuid(),
+    _id: uuid(),
     category: "kids",
     isStarred: false,
     sellingPrice: 899,
@@ -80,7 +80,7 @@ export const products = [
       "https://static.parenting.com/wp-content/uploads/migrated/oxfords-holiday-fashion-plaid-dress.jpg"
   },
   {
-    id: uuid(),
+    _id: uuid(),
     category: "women",
     isStarred: false,
     sellingPrice: 499,

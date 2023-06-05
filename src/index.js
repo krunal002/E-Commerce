@@ -8,7 +8,8 @@ import { makeServer } from "./server";
 import { ProductContextHandler } from "./Context/ProductContext";
 import { CategoryContextHandler } from "./Context/CategoryContext";
 import { LoginContextHandler } from "./Context/LoginContext";
-import { CartContextHandler } from "./Context/CartContext"
+import { CartContextHandler } from "./Context/CartContext";
+import { WishlishContextHandler } from "./Context/WishlistContext";
 
 // Call make Server
 makeServer();
@@ -20,7 +21,9 @@ ReactDOM.render(
         <CategoryContextHandler>
           <LoginContextHandler>
             <CartContextHandler>
-              <App />
+              <WishlishContextHandler>
+                <App />
+              </WishlishContextHandler>
             </CartContextHandler>
           </LoginContextHandler>
         </CategoryContextHandler>
