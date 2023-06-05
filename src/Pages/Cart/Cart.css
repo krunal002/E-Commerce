@@ -1,0 +1,18 @@
+.cartContainer {
+    margin: 1rem auto;
+    /* max-width: 600px; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+.leftCartContainer{
+    display: flex;
+    padding: 1rem;
+    border: 1px solid;
+}
+.image, .information{
+    border: 1px solid;
+    padding: 1rem;
+}
+.rightCartContainer{
+    text-align: left;
+}
