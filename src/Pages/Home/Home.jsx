@@ -14,6 +14,7 @@ const Home = () => {
     navigate("/store");
     dispatch({ type: "category", payload: value });
   };
+
   return (
     <div>
       <Header />
@@ -27,7 +28,7 @@ const Home = () => {
               onClick={() => clickHandler(category.categoryName)}
               style={{
                 backgroundImage: `url(${category.pic})`,
-                backgroundsize: "10px 10px"
+                backgroundsize: "10px 10px",
               }}
             >
               <h2>{category.categoryName}</h2>

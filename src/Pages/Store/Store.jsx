@@ -1,12 +1,13 @@
 import "./store.css"
 import Filters from "../../Component/Filters/filters"
-import { ProductContext } from "../../E-Commerse";
+import { CartContext, ProductContext } from "../../E-Commerse";
 
 import { Link } from "react-router-dom"
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const Store = () => {
-    const { productData, cartHandler } = useContext(ProductContext);
+    const { productData } = useContext(ProductContext);
+    const { addToCartHandler } = useContext(CartContext)
  
     return <div>
         <h2>Store is Ready</h2>
@@ -24,14 +25,6 @@ const Store = () => {
         <small>Number of products : {productData.length}</small>
           <div className="products">
           {productData.map((product) => {
-            {/* const isCartProduct = cartProduct.find(
-              (reqProduct) => reqProduct.id === product.id
-            );
-
-            const isWishlishProduct = wishlistProduct.find(
-              (reqProduct) => reqProduct.id === product.id
-            ); */}
-
             return (
               <div key={product.id} className="storeProducts">
                 <Link to={`/product-details/${product.id}`}>
@@ -48,23 +41,13 @@ const Store = () => {
                 <button 
                     // onClick={() => wishlisthandler(product)}
                 >
-                  {/* {isWishlishProduct ? (
-                    <Link to="/wishlist">Go to Wishlist</Link>
-                  ) : (
-                    "Add to wishlist"
-                  )} */}
                   Add to wishlist
                 </button>
 
                 <button
                   className="cartButton"
-                  onClick={() => cartHandler(product)}
+                  onClick={() => addToCartHandler(product)}
                 >
-                  {/* {isCartProduct ? (
-                    <Link to="/cart">Go to Cart</Link>
-                  ) : (
-                    "Add to Cart"
-                  )} */}
                   Add to Cart
                 </button>
               </div>

@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
 
-import { ProductContextHandler } from "./Context/ProductContext"
-import { CategoryContextHandler } from "./Context/CategoryContext"
+import { ProductContextHandler } from "./Context/ProductContext";
+import { CategoryContextHandler } from "./Context/CategoryContext";
+import { LoginContextHandler } from "./Context/LoginContext";
+import { CartContextHandler } from "./Context/CartContext"
 
 // Call make Server
 makeServer();
@@ -15,9 +17,13 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ProductContextHandler>
-      <CategoryContextHandler>
-      <App />
-      </CategoryContextHandler>
+        <CategoryContextHandler>
+          <LoginContextHandler>
+            <CartContextHandler>
+              <App />
+            </CartContextHandler>
+          </LoginContextHandler>
+        </CategoryContextHandler>
       </ProductContextHandler>
     </BrowserRouter>
   </React.StrictMode>,

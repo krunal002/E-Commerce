@@ -9,8 +9,10 @@ export const ProductContextHandler = ({ children }) => {
     switch (action.type) {
       case "price":
         return { ...state, priceFilterValue: action.payload };
+
       case "category":
         return { ...state, categoryFilter: action.payload };
+
       case "rating":
         return { ...state, ratingFilter: action.payload };
       case "sort":
@@ -33,7 +35,6 @@ export const ProductContextHandler = ({ children }) => {
       // setData(await response.json())
       const data = await response.json();
       setTempData(data.products);
-      
     } catch (e) {
       console.log(e);
     }
@@ -70,19 +71,17 @@ export const ProductContextHandler = ({ children }) => {
 
   const productData = sortedData;
 
-  // Cart Handler 
+  // Cart Handler
 
-  const cartHandler = async ( product ) => {
+  const cartHandler = async (product) => {
     // try{
     //   const res = await fetch("/api/user/cart",{
     //     method:'POST',
     //     body: JSON.stringify(product)
     //   })
-
     //   console.log(await res.json())
-      
     // } catch(e) { console.log(e)}
-  }
+  };
 
   return (
     <div>
