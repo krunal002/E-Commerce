@@ -33,7 +33,7 @@ export const CartContextHandler = ({ children }) => {
     const removeProduct = async ( product ) => {
         const url = `/api/user/cart/${product._id}`
         try {
-            const res = await fetch(url,{
+            await fetch(url,{
                 method:"DELETE",
                 headers: { authorization : encodedToken }
             })

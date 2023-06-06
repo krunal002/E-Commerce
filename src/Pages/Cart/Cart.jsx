@@ -16,7 +16,7 @@ const Cart = () => {
   const flag = cartData.length === 0 ? true : false;
   const price = cartData.reduce( (acc, curr ) => (acc+=curr.sellingPrice),0)
   const totalPtice = Math.round(price - (price/4))
-  const priceSave = (cartData.reduce( (acc, curr ) => (acc+=curr.price),0)) - totalPtice
+  const priceSave = price - totalPtice
 
   return (
     <div>

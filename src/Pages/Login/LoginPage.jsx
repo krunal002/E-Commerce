@@ -2,8 +2,10 @@ import { useContext } from "react";
 import "./loginPage.css";
 import { LoginContext } from "../../Context/LoginContext";
 import Header from "../../Component/Header/Header";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate()
   const { testUser, loginHandler, dispatch, token, logout, currUser } =
     useContext(LoginContext);
   const { firstName, lastName, email } = currUser;
@@ -49,7 +51,7 @@ const LoginPage = () => {
             </button>
           </div>
           <div>
-            <button className="loginButton">Sigh up</button>
+            <button className="loginButton" onClick={() => navigate("/signup")}>Sigh up</button>
             <button className="loginButton" onClick={testUser}>
               Login as Test User
             </button>
