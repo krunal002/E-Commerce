@@ -9,7 +9,7 @@ const Store = () => {
   const navigate = useNavigate();
   const { productData } = useContext(ProductContext);
   const { cartData, addToCartHandler } = useContext(CartContext);
-  const { data_Wishlist, addToWishlistHandler } = useContext(WishlistContext);
+  const { data_Wishlist, addToWishlistHandler, removeWishlistProduct } = useContext(WishlistContext);
 
   return (
     <div>
@@ -44,7 +44,7 @@ const Store = () => {
               return (
                 <div key={product._id} className="storeProducts">
                   <div
-                    onClick={() => addToWishlistHandler(product)}
+                    onClick={() => addedToWishlist?removeWishlistProduct(product) :addToWishlistHandler(product)}
                     className="wishlistIcon"
                   >
                     {addedToWishlist ? (
@@ -66,7 +66,7 @@ const Store = () => {
                   </p>
                   <p>
                     ₹{product.sellingPrice}{" "}
-                    <span className="printedPrice">{product.price}</span>
+                    <small className="printedPrice">{product.price}</small>
                   </p>
                   <p>Rating : {product.rating}/5</p>
 

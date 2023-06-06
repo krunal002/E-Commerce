@@ -32,8 +32,18 @@ export const WishlishContextHandler = ({ children }) => {
       }catch(e){ console.log(e) }
   }
 
+  const removeWishlistProduct = async ( product ) => {
+    const url = `/api/user/wishlist/${product._id}`
+    try{
+      await fetch(url, {
+        method:"DELETE",
+        headers: { authorization : encodedToken }
+      })
+    } catch(e) { console.log(e) }
+  }
+
   return (
-    <WishlistContext.Provider value={{ data_Wishlist, addToWishlistHandler }}>
+    <WishlistContext.Provider value={{ data_Wishlist, addToWishlistHandler, removeWishlistProduct }}>
       {children}
     </WishlistContext.Provider>
   );

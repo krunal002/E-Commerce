@@ -1,9 +1,10 @@
+import "./Wishlist.css"
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const Wishlist = () => {
-  const { data_Wishlist } = useContext(WishlistContext);
+  const { data_Wishlist, removeWishlistProduct } = useContext(WishlistContext);
   const navigate = useNavigate();
   const { cartData, addToCartHandler } = useContext(CartContext);
 
@@ -25,12 +26,12 @@ const Wishlist = () => {
       {flag ? (
         <div>empty</div>
       ) : (
-        <div>
+        <div className="wishlistContainer">
           {data_Wishlist.map((product) => {
             const addedToCart = cartData.find(({ _id }) => _id === product._id);
 
             return (
-              <div key={product.id} className="storeProducts">
+              <div key={product.id} className="wishlistProducts">
                 <Link to={`/product-details/${product.id}`}>
                   <img
                     src={product.image}
@@ -39,14 +40,18 @@ const Wishlist = () => {
                   />
                 </Link>
 
+                <p>{product.name}</p>
                 <p>
-                  Price : ₹{product.sellingPrice}{" "}
+                  <b>₹{product.sellingPrice}</b>{" "}
                   <span className="printedPrice">{product.price}</span>
                 </p>
-                <p>Category : {product.category}</p>
-                <p>Rating : {product.rating}/5</p>
+                <div>
+                  <button className="quantityBtn"><b>-</b></button>
+                  <button className="quantityBtn">7</button>
+                  <button className="quantityBtn"><b>+</b></button>
+                </div>
                 <button
-                  className="cartButton"
+                  className="wishlistButton"
                   onClick={() =>
                     addedToCart ? navigate("/cart") : addToCartHandler(product)
                   }
@@ -54,7 +59,7 @@ const Wishlist = () => {
                   <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
                   {addedToCart ? "Go to Cart" : "Add to Cart"}
                 </button>
-                
+                <button className="wishlistButton" onClick={() => removeWishlistProduct(product)}>Remove</button>
               </div>
             );
           })}

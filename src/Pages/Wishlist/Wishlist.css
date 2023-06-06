@@ -1,0 +1,23 @@
+.wishlistContainer{
+    margin: auto;
+    display: flex;
+}
+.wishlistProducts{
+    margin: 0.5rem;
+    background-color: white;
+    box-shadow: 2px 3px 5px 3px gray;
+    height: 28rem;
+    text-align: center;
+    line-height: 5px;
+}
+.wishlistButton{
+    margin: 0.2rem;
+    width: 90%;
+    padding: 0.5rem;
+}
+.quantityBtn{
+    padding: 0.5rem 1rem;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+}
