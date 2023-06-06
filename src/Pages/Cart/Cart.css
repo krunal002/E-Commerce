@@ -1,18 +1,44 @@
 .cartContainer {
     margin: 1rem auto;
-    /* max-width: 600px; */
-    /* display: flex; */
-    /* justify-content: space-between; */
-}
-.leftCartContainer{
+    max-width: 1000px; 
     display: flex;
-    padding: 1rem;
-    border: 1px solid;
+    justify-content: space-between;
 }
-.image, .information{
-    border: 1px solid;
-    padding: 1rem;
+
+.initial{
+    margin: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px 2px gray;
 }
-.rightCartContainer{
+.information{
+    padding: 1rem;
     text-align: left;
+}
+
+.rightCartContainer{
+   text-align: left;
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 1px 1px 3px 2px gray;
+    border-radius: 0.5rem;
+    height: 19rem;
+    width: 23rem;
+}
+.final{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fullButton{
+    width: 10rem;
+    padding: 0.5rem;
+    
+}
+.finalButton{
+    width: 100%;
+    padding: 0.8rem;
+    background-color: cornflowerblue;
 }

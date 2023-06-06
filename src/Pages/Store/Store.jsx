@@ -36,8 +36,8 @@ const Store = () => {
                   />
                 </Link>
 
-                <p>Price : ₹{product.sellingPrice} <span className="printedPrice">{product.price}</span></p>
-                <p>Category : {product.category}</p>
+                <p><b>{product.name}</b></p>
+                <p>₹{product.sellingPrice} <span className="printedPrice">{product.price}</span></p>
                 <p>Rating : {product.rating}/5</p>
                 {/* <p><Link to={`/details/${product._id}`}>Details</Link></p> */}
 

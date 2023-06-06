@@ -21,26 +21,30 @@ const Cart = () => {
         <div className="leftCartContainer">
           {cartData.map((product) => {
             return (
-              <div key={product.id}>
+              <div key={product.id} className="initial">
                 <div className="image">
-                    <img
-                      src={product.image}
-                      alt="clothingImage"
-                      className="storeImage"
-                    />
+                  <img
+                    src={product.image}
+                    alt="clothingImage"
+                    className="storeImage"
+                  />
                 </div>
+
                 <div className="information">
-                  <p>
-                    Price : ₹{product.sellingPrice}{" "}
-                    <span className="printedPrice">{product.price}</span>
-                  </p>
-                  <p>Category : {product.category}</p>
-                  <p>Rating : {product.rating}/5</p>
+                  <div className="value">
+                  <p>{product.name}</p>
+                    <b>
+                      ₹{product.sellingPrice}{" "}
+                      <span className="printedPrice">{product.price}</span>
+                    </b>
+                   <p>Rating : {product.rating}/5</p>
+                  </div>
                   <button
-                  // onClick={() => wishlisthandler(product)}
-                  >
-                    Add to wishlist
-                  </button>
+                      className="fullButton"
+                      // onClick={() => wishlisthandler(product)}
+                    >
+                      Add to wishlist
+                    </button>
                 </div>
               </div>
             );
@@ -48,13 +52,26 @@ const Cart = () => {
         </div>
 
         <div className="rightCartContainer">
-          <b>Price Details</b>
+        <b>Price Details</b>
+        <hr></hr>
+          <div className="final">
+          <div className="key">
           <p>Price : </p>
           <p>Discount : </p>
           <p>Delivery Charges : </p>
           <b>Total Amount : </b>
+          </div>
+          
+          <div className="value">
+          <p>1000</p>
+          <p>50</p>
+          <p>Free</p>
+          <b>1000</b>
+          </div>
+          </div>
+          <hr></hr>
           <p>You will save ₹0000 on this order</p>
-          <button>Place Order</button>
+          <button className="finalButton" ><b>Place Order</b></button>
         </div>
       </div>
     </div>
