@@ -54,6 +54,7 @@ const Wishlist = () => {
                   <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
                   {addedToCart ? "Go to Cart" : "Add to Cart"}
                 </button>
+                
               </div>
             );
           })}

@@ -5,6 +5,7 @@ import Store from "./Pages/Store/Store";
 import Wishlist from "./Pages/Wishlist/Wishlist";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import UserProfile from "./Pages/Profile/UserProfile"
+import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder"
 import { RequiresAuth } from "./Component/RequiresAuth";
 
 import { Routes, Route } from "react-router-dom";
@@ -56,6 +57,7 @@ const ECommerse = () => {
         <Route path="/store" element={<Store />} />
         <Route path="/details/:productId" element={<ProductDetails />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/placeorder" element={<PlaceOrder />} />
       </Routes>
     </div>
   );

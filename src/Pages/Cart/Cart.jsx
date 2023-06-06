@@ -1,11 +1,22 @@
 import "./Cart.css";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { CartContext } from "../../E-Commerse";
+import { Link, useNavigate } from "react-router-dom";
+import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const Cart = () => {
+  const navigate = useNavigate()
   const { cartData, removeProduct } = useContext(CartContext);
+  const { addToWishlistHandler } = useContext(WishlistContext);
+
+  const wishlisthandler = (product) => {
+    addToWishlistHandler(product);
+    removeProduct(product);
+  };
+
   const flag = cartData.length === 0 ? true : false;
+  const price = cartData.reduce( (acc, curr ) => (acc+=curr.sellingPrice),0)
+  const totalPtice = Math.round(price - (price/4))
+  const priceSave = (cartData.reduce( (acc, curr ) => (acc+=curr.price),0)) - totalPtice
 
   return (
     <div>
@@ -48,7 +59,7 @@ const Cart = () => {
                       </div>
                       <button
                         className="fullButton"
-                        // onClick={() => wishlisthandler(product)}
+                        onClick={() => wishlisthandler(product)}
                       >
                         Move to wishlist
                       </button>
@@ -76,16 +87,16 @@ const Cart = () => {
                 </div>
 
                 <div className="value">
-                  <p>1000</p>
-                  <p>50</p>
+                  <p>{price}</p>
+                  <p>25%</p>
                   <p>Free</p>
-                  <b>1000</b>
+                  <b>{totalPtice}</b>
                 </div>
               </div>
               <hr></hr>
-              <p>You will save ₹0000 on this order</p>
+              <p>You will save total <b>₹{priceSave}</b> on this order</p>
               <button className="finalButton">
-                <b>Place Order</b>
+                <b onClick={() => navigate("/placeorder")}>Place Order</b>
               </button>
             </div>
           </div>
