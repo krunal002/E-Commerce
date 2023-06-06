@@ -6,8 +6,6 @@ export const RequiresAuth  = ( {children} ) => {
     const { token } = useContext(LoginContext);
     let location = useLocation();
 
-    
-    // console.log(localStorage.getItem("encodedToken"),"haan")
     return token
         ? children : <Navigate to="/login" state={{ from:location }}/>
 }

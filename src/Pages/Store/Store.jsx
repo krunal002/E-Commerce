@@ -1,64 +1,93 @@
-import "./store.css"
-import Filters from "../../Component/Filters/filters"
+import "./store.css";
+import Filters from "../../Component/Filters/filters";
 import { CartContext, ProductContext, WishlistContext } from "../../E-Commerse";
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 
 const Store = () => {
-    const { productData } = useContext(ProductContext);
-    const { addToCartHandler } = useContext(CartContext)
-    const { addToWishlistHandler } = useContext(WishlistContext)
- 
-    return <div>
-        <h2>Store is Ready</h2>
-        <Link to="/" className="headerLink">Home</Link>
-        <hr></hr>
+  const navigate = useNavigate();
+  const { productData } = useContext(ProductContext);
+  const { cartData, addToCartHandler } = useContext(CartContext);
+  const { data_Wishlist, addToWishlistHandler } = useContext(WishlistContext);
 
-        <div className="container">
-      
+  return (
+    <div>
+      <Link to="/" className="headerLink">
+        <i class="fa fa-home" aria-hidden="true"></i>
+      </Link>
+      <Link to="/cart" className="headerLink">
+        <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
+      </Link>
+      <Link to="/wishlist" className="headerLink">
+        {" "}
+        <i class="fa fa-heart" aria-hidden="true"></i>{" "}
+      </Link>
+      <hr></hr>
 
-        <div className="leftContainer"> 
+      <div className="container">
+        <div className="leftContainer">
           <Filters />
         </div>
 
         <div className="rightContainer">
-        <small>Number of products : {productData.length}</small>
+          <small>Number of products : {productData.length}</small>
           <div className="products">
-          {productData.map((product) => {
-            return (
-              <div key={product._id} className="storeProducts">
-                <Link to={`/details/${product._id}`}>
-                  <img
-                    src={product.image}
-                    alt="clothingImage"
-                    className="storeImage"
-                  />
-                </Link>
+            {productData.map((product) => {
+              const addedToCart = cartData.find(
+                ({ _id }) => _id === product._id
+              );
+              const addedToWishlist = data_Wishlist.find(
+                ({ _id }) => _id === product._id
+              );
 
-                <p><b>{product.name}</b></p>
-                <p>₹{product.sellingPrice} <span className="printedPrice">{product.price}</span></p>
-                <p>Rating : {product.rating}/5</p>
-                {/* <p><Link to={`/details/${product._id}`}>Details</Link></p> */}
-
-                <button 
+              return (
+                <div key={product._id} className="storeProducts">
+                  <div
                     onClick={() => addToWishlistHandler(product)}
-                >
-                  Add to wishlist
-                </button>
+                    className="wishlistIcon"
+                  >
+                    {addedToWishlist ? (
+                      <i class="fa fa-heart" aria-hidden="true"></i>
+                    ) : (
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    )}
+                  </div>
+                  <Link to={`/details/${product._id}`}>
+                    <img
+                      src={product.image}
+                      alt="clothingImage"
+                      className="storeImage"
+                    />
+                  </Link>
 
-                <button
-                  className="cartButton"
-                  onClick={() => addToCartHandler(product)}
-                >
-                  Add to Cart
-                </button>
-              </div>
-            );
-          })}
-          </div>
+                  <p>
+                    <b>{product.name}</b>
+                  </p>
+                  <p>
+                    ₹{product.sellingPrice}{" "}
+                    <span className="printedPrice">{product.price}</span>
+                  </p>
+                  <p>Rating : {product.rating}/5</p>
+
+                  <button
+                    className="cartButton"
+                    onClick={() =>
+                      addedToCart
+                        ? navigate("/cart")
+                        : addToCartHandler(product)
+                    }
+                  >
+                    <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
+                    {addedToCart ? "Go to Cart" : "Add to Cart"}
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
+      </div>
     </div>
-}
+  );
+};
 export default Store;

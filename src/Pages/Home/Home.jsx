@@ -19,17 +19,13 @@ const Home = () => {
     <div>
       <Header />
       <div className="categoryContainer">
-        <h1>Home is READY</h1>
+        <h1>Get your Choice</h1>
 
         <div className="showCategory">
           {categoryData.map((category) => (
             <div
               className="categoryProductContainer"
               onClick={() => clickHandler(category.categoryName)}
-              style={{
-                backgroundImage: `url(${category.pic})`,
-                backgroundsize: "10px 10px",
-              }}
             >
               <h2>{category.categoryName}</h2>
               <p>{category.description}</p>
@@ -38,12 +34,12 @@ const Home = () => {
         </div>
 
         <div className="storeRoute" onClick={() => clickHandler("all")}>
-          Go to store
+          <h2>Go to store</h2>
         </div>
 
         <div className="collectionContainer">
-          <p className="collectionCategory">wedding Sarree collection</p>
-          <p className="collectionCategory">latest Kurta collection</p>
+          <p className="collectionCategory" onClick={() => clickHandler("women")}>wedding Sarree collection</p>
+          <p className="collectionCategory" onClick={() => clickHandler("men")}>latest Kurta collection</p>
         </div>
       </div>
     </div>

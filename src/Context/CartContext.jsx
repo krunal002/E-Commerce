@@ -30,7 +30,16 @@ export const CartContextHandler = ({ children }) => {
         }catch(e){ console.log(e) }
     }
 
-    return <CartContext.Provider value={{ cartData, addToCartHandler }}>
+    const removeProduct = async ( product ) => {
+        const url = `/api/user/cart/${product._id}`
+        try {
+            const res = await fetch(url,{
+                method:"DELETE",
+                headers: { authorization : encodedToken }
+            })
+        } catch (e) { console.log(e) }
+    }
+    return <CartContext.Provider value={{ cartData, addToCartHandler, removeProduct }}>
         { children }
     </CartContext.Provider>
 }
