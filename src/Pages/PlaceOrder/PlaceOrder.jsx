@@ -15,7 +15,7 @@ const PlaceOrder = () => {
   const { cartData } = useContext(CartContext);
   const navigate = useNavigate()
 
-  const price = cartData.reduce((acc, curr) => (acc += curr.sellingPrice), 0);
+  const price = cartData.reduce((acc, curr) => (acc += curr.sellingPrice*curr.qty), 0);
   const totalPtice = Math.round(price - price / 4);
   const priceSave = price - totalPtice;
 

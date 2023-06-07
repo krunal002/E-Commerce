@@ -26,6 +26,7 @@ const Store = () => {
       </Link>
       <hr></hr>
 
+
       <div className="container">
         <div className="leftContainer">
           <Filters />

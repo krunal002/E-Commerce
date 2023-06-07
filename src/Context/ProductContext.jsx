@@ -91,6 +91,7 @@ export const ProductContextHandler = ({ children }) => {
 
   const productData = searchItems;
 
+  
   return (
     <div>
       <ProductContext.Provider
