@@ -7,16 +7,16 @@ export const ProductContextHandler = ({ children }) => {
 
   const reducerFun = (state, action) => {
     switch (action.type) {
+      case "productSearch":
+        return { ...state, productSearch: action.payload };
       case "price":
-        return { ...state, priceFilterValue: action.payload };
-
+        return { ...state, priceFilterValue: action.payload, productSearch:"" };
       case "category":
-        return { ...state, categoryFilter: action.payload };
-
+        return { ...state, categoryFilter: action.payload, productSearch:"" };
       case "rating":
-        return { ...state, ratingFilter: action.payload };
+        return { ...state, ratingFilter: action.payload, productSearch:"" };
       case "sort":
-        return { ...state, sortPrice: action.payload };
+        return { ...state, sortPrice: action.payload, productSearch:"" };
       default:
         return state;
     }
@@ -27,6 +27,7 @@ export const ProductContextHandler = ({ children }) => {
     categoryFilter: "all",
     ratingFilter: "all",
     sortPrice: "none",
+    productSearch: "",
   });
 
   const getData = async () => {
@@ -42,6 +43,8 @@ export const ProductContextHandler = ({ children }) => {
   useEffect(() => {
     getData();
   }, []);
+
+  
 
   const priceData =
     state.priceFilterValue === 0
@@ -69,7 +72,12 @@ export const ProductContextHandler = ({ children }) => {
       ? ratingData.sort((a, b) => a.sellingPrice - b.sellingPrice)
       : ratingData.sort((a, b) => b.sellingPrice - a.sellingPrice);
 
-  const productData = sortedData;
+
+  const searchItems = state.productSearch===""
+    ?sortedData
+    :sortedData.filter( ({name}) => name.toLowerCase().includes(state.productSearch.toLowerCase()))
+  
+  const productData = searchItems;
 
   return (
     <div>

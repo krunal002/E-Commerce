@@ -95,8 +95,8 @@ const Cart = () => {
               </div>
               <hr></hr>
               <p>You will save total <b>₹{priceSave}</b> on this order</p>
-              <button className="finalButton">
-                <b onClick={() => navigate("/placeorder")}>Place Order</b>
+              <button className="finalButton" onClick={() => navigate("/placeorder")}>
+                <b>Place Order</b>
               </button>
             </div>
           </div>

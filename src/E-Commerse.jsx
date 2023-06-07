@@ -6,6 +6,7 @@ import Wishlist from "./Pages/Wishlist/Wishlist";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import UserProfile from "./Pages/Profile/UserProfile"
 import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder"
+import Payment from "./Pages/PlaceOrder/Payment"
 import SignUp from "./Pages/Login/SignUp"
 import { RequiresAuth } from "./Component/RequiresAuth";
 
@@ -60,6 +61,7 @@ const ECommerse = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/placeorder" element={<PlaceOrder />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
     </div>
   );

@@ -1,23 +1,34 @@
+import { useContext, useState } from "react";
 import "./header.css";
 
 import { Link, useNavigate } from "react-router-dom";
+import { ProductContext } from "../../E-Commerse";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [ searchValue, setSearchValue ] = useState("")
+  const { state, dispatch } = useContext(ProductContext);
 
+  const searchHandler = () =>{
+    dispatch({ type: "productSearch", payload: searchValue})
+    navigate("/store")
+  }
   return (
     <div>
       <div className="header">
-        {/* <h2>Outfit Adda</h2> */}
         <div>
           <button className="headerButton" onClick={() => navigate("/login")}>
             Login <i class="fa fa-sign-in" aria-hidden="true"></i>
           </button>
         </div>
 
-        <div>
+        <div 
+          className="searchContainer" 
+          onChange={(e) => setSearchValue(e.target.value)}
+          value={state.productSearch}
+        >
           <input type="search" placeholder="Search..." className="search" />{" "}
-          {/* <i class="fa fa-search" aria-hidden="true"></i> */}
+          <button onClick={searchHandler} disabled={!searchValue}><i class="fa fa-search" aria-hidden="true"></i></button>
         </div>
 
         <div>
