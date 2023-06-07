@@ -1,6 +1,8 @@
 .wishlistContainer{
     margin: auto;
+    max-width: 800px;
     display: flex;
+    flex-wrap: wrap;
 }
 .wishlistProducts{
     margin: 1rem auto;
