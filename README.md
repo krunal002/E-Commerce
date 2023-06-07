@@ -1,2 +1,2 @@
 # Outfit_Adda
- Basic e-commerse app
+ E-commerce app designed to purchase clothes
