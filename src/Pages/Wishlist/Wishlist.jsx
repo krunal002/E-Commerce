@@ -32,24 +32,20 @@ const Wishlist = () => {
 
             return (
               <div key={product.id} className="wishlistProducts">
-                <Link to={`/product-details/${product.id}`}>
+                
                   <img
                     src={product.image}
                     alt="clothingImage"
                     className="storeImage"
                   />
-                </Link>
+                
 
                 <p>{product.name}</p>
                 <p>
                   <b>₹{product.sellingPrice}</b>{" "}
                   <span className="printedPrice">{product.price}</span>
                 </p>
-                <div>
-                  <button className="quantityBtn"><b>-</b></button>
-                  <button className="quantityBtn">7</button>
-                  <button className="quantityBtn"><b>+</b></button>
-                </div>
+                <p><i class="fa fa-star" aria-hidden="true"></i> {product.rating}/5</p>
                 <button
                   className="wishlistButton"
                   onClick={() =>

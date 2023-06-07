@@ -4,8 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const Cart = () => {
-  const navigate = useNavigate()
-  const { cartData, removeProduct } = useContext(CartContext);
+  const navigate = useNavigate();
+  const { cartData, removeProduct, incrementQuant, decrementQuant } =
+    useContext(CartContext);
   const { addToWishlistHandler } = useContext(WishlistContext);
 
   const wishlisthandler = (product) => {
@@ -14,9 +15,12 @@ const Cart = () => {
   };
 
   const flag = cartData.length === 0 ? true : false;
-  const price = cartData.reduce( (acc, curr ) => (acc+=curr.sellingPrice),0)
-  const totalPtice = Math.round(price - (price/4))
-  const priceSave = price - totalPtice
+  const price = cartData.reduce(
+    (acc, curr) => (acc += curr.sellingPrice * curr.qty),
+    0
+  );
+  const totalPtice = Math.round(price - price / 4);
+  const priceSave = price - totalPtice;
 
   return (
     <div>
@@ -56,6 +60,22 @@ const Cart = () => {
                           <span className="printedPrice">{product.price}</span>
                         </b>
                         <p>Rating : {product.rating}/5</p>
+                        <div>
+                          <button
+                            className="quantityBtn"
+                            onClick={() => decrementQuant(product)}
+                            disabled={product.qty === 0}
+                          >
+                            <b>-</b>
+                          </button>
+                          <button className="quantityBtn">{product.qty}</button>
+                          <button
+                            className="quantityBtn"
+                            onClick={() => incrementQuant(product)}
+                          >
+                            <b>+</b>
+                          </button>
+                        </div>
                       </div>
                       <button
                         className="fullButton"
@@ -94,8 +114,13 @@ const Cart = () => {
                 </div>
               </div>
               <hr></hr>
-              <p>You will save total <b>₹{priceSave}</b> on this order</p>
-              <button className="finalButton" onClick={() => navigate("/placeorder")}>
+              <p>
+                You will save total <b>₹{priceSave}</b> on this order
+              </p>
+              <button
+                className="finalButton"
+                onClick={() => navigate("/placeorder")}
+              >
                 <b>Place Order</b>
               </button>
             </div>

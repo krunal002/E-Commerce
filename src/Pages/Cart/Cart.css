@@ -43,3 +43,9 @@
     padding: 0.8rem;
     background-color: cornflowerblue;
 }
+.quantityBtn{
+    padding: 0.5rem 1rem;
+    margin: 5px;
+    border-radius: 20px;
+    border: none;
+}
