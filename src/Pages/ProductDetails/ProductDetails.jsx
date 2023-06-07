@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import "./ProductDetails.css"
+import { useParams, Link } from "react-router-dom";
 import "./ProductDetails.css";
 import { useEffect, useState } from "react";
 
@@ -16,20 +17,27 @@ const ProductDetails = () => {
     getProductDetails();
   });
 
-  const { _id, image, sellingPrice, category, rating, price } = productDetailsData;
+  const { _id, name, image, sellingPrice, rating, price } = productDetailsData;
+
+
+  const discount = (price-sellingPrice)
+
   return (
-    <>
-      <h1>{productId}</h1>
-      <div key={_id} className="storeProducts">
+    <div>
+      <Link to="/store" className="headerLink">
+            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+          </Link>
+      <div key={_id} className="singleProduct">
           <img src={image} alt="clothingImage" className="storeImage" />
         <p>
-          Price : ₹{sellingPrice}{" "}
-          <span className="printedPrice">{price}</span>
+        <h1>{name}</h1>
+          <h3>₹{sellingPrice} <small className="printedPrice">{price}</small></h3>{" "}
+          
         </p>
-        <p>Category : {category}</p>
+        <p>Flat : <b className="discount">{discount}</b> off</p>
         <p>Rating : {rating}/5</p>
       </div>
-    </>
+    </div>
   );
 };
 export default ProductDetails;

@@ -14,7 +14,9 @@ const Filters = () => {
       <div className="filterHeader">
         <h2>Filters </h2>
         <div>
-          <button>Clear</button>
+          <button 
+          onClick={(e) => dispatch({type : "clear"})}
+          >Clear</button>
         </div>
       </div>
 

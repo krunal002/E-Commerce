@@ -1,0 +1,13 @@
+.singleProduct{
+    margin: 2rem auto;
+    padding: 0.5rem;
+    width: 20rem;
+    box-shadow: 1px 1px 5px 3px gray;
+    border-radius: 0.5rem;
+    line-height: 10px;
+}
+.discount{
+    color: darkcyan;
+    font-style: italic;
+    font-size: larger;
+}

@@ -6,9 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const navigate = useNavigate()
-  const { testUser, loginHandler, dispatch, token, logout, currUser } =
+  const { state, testUser, loginHandler, dispatch, token, logout, currUser } =
     useContext(LoginContext);
   const { firstName, lastName, email } = currUser;
+
+  const check = state.email.length>0 && state.password.length>0;
+
   return (
     <div>
       <Header />
@@ -46,7 +49,11 @@ const LoginPage = () => {
                 dispatch({ type: "password", payload: `${e.target.value}` })
               }
             />
-            <button className="signInButton" onClick={loginHandler}>
+            <button 
+              className="signInButton" 
+              onClick={loginHandler}
+              disabled={!check}
+              >
               Sign In
             </button>
           </div>

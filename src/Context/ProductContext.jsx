@@ -10,13 +10,26 @@ export const ProductContextHandler = ({ children }) => {
       case "productSearch":
         return { ...state, productSearch: action.payload };
       case "price":
-        return { ...state, priceFilterValue: action.payload, productSearch:"" };
+        return {
+          ...state,
+          priceFilterValue: action.payload,
+          productSearch: "",
+        };
       case "category":
-        return { ...state, categoryFilter: action.payload, productSearch:"" };
+        return { ...state, categoryFilter: action.payload, productSearch: "" };
       case "rating":
-        return { ...state, ratingFilter: action.payload, productSearch:"" };
+        return { ...state, ratingFilter: action.payload, productSearch: "" };
       case "sort":
-        return { ...state, sortPrice: action.payload, productSearch:"" };
+        return { ...state, sortPrice: action.payload, productSearch: "" };
+      case "clear":
+        return {
+          ...state,
+          priceFilterValue: 0,
+          categoryFilter: "all",
+          ratingFilter: "all",
+          sortPrice: "none",
+          productSearch: "",
+        };
       default:
         return state;
     }
@@ -33,7 +46,6 @@ export const ProductContextHandler = ({ children }) => {
   const getData = async () => {
     try {
       const response = await fetch("/api/products");
-      // setData(await response.json())
       const data = await response.json();
       setTempData(data.products);
     } catch (e) {
@@ -43,8 +55,6 @@ export const ProductContextHandler = ({ children }) => {
   useEffect(() => {
     getData();
   }, []);
-
-  
 
   const priceData =
     state.priceFilterValue === 0
@@ -72,11 +82,13 @@ export const ProductContextHandler = ({ children }) => {
       ? ratingData.sort((a, b) => a.sellingPrice - b.sellingPrice)
       : ratingData.sort((a, b) => b.sellingPrice - a.sellingPrice);
 
+  const searchItems =
+    state.productSearch === ""
+      ? sortedData
+      : sortedData.filter(({ name }) =>
+          name.toLowerCase().includes(state.productSearch.toLowerCase())
+        );
 
-  const searchItems = state.productSearch===""
-    ?sortedData
-    :sortedData.filter( ({name}) => name.toLowerCase().includes(state.productSearch.toLowerCase()))
-  
   const productData = searchItems;
 
   return (
