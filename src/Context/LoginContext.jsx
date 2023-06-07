@@ -1,8 +1,11 @@
 import { createContext, useReducer, useState } from "react";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from "react-router-dom";
 export const LoginContext = createContext();
 
 export const LoginContextHandler = ({ children }) => {
+  const notify = () => toast("Logged In!");
   const [token, setToken] = useState(false);
   const [currUser, setCurrUser] = useState({});
 
@@ -69,7 +72,7 @@ export const LoginContextHandler = ({ children }) => {
     } catch (e) {
       console.log("error : ", e);
     }
-
+    notify()
     setToken(tokenResult());
     navigate(location?.state?.from?.pathname)
   };

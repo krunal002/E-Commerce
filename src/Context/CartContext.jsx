@@ -1,7 +1,13 @@
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { createContext, useEffect, useState } from "react";
 export const CartContext = createContext();
 
 export const CartContextHandler = ({ children }) => {
+    const notify_cart = () => toast("Added to Cart!");
+    const notify_remove = () => toast("Removed from Cart!");
+
   const [cartData, setCartData] = useState([]);
   const encodedToken = localStorage.getItem("encodedToken");
 
@@ -23,7 +29,7 @@ export const CartContextHandler = ({ children }) => {
 
   const addToCartHandler = async (product) => {
     try {
-      const resp = await fetch("/api/user/cart", {
+      await fetch("/api/user/cart", {
         method: "POST",
         headers: { authorization: encodedToken },
         body: JSON.stringify({ product: product }),
@@ -31,6 +37,7 @@ export const CartContextHandler = ({ children }) => {
     } catch (e) {
       console.log(e);
     }
+    notify_cart()
   };
 
   const removeProduct = async (product) => {
@@ -43,6 +50,7 @@ export const CartContextHandler = ({ children }) => {
     } catch (e) {
       console.log(e);
     }
+    notify_remove()
   };
 
   const incrementQuant = async (product) => {

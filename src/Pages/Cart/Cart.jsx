@@ -1,4 +1,5 @@
 import "./Cart.css";
+import { ToastContainer } from 'react-toastify';
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext, WishlistContext } from "../../E-Commerse";
@@ -24,6 +25,7 @@ const Cart = () => {
 
   return (
     <div>
+    <ToastContainer />
       <Link to="/" className="headerLink">
         <i class="fa fa-home" aria-hidden="true"></i>
       </Link>

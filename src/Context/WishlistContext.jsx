@@ -1,7 +1,13 @@
+import { toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+
 import { createContext, useEffect, useState } from "react";
 export const WishlistContext = createContext();
 
 export const WishlishContextHandler = ({ children }) => {
+  const notify_wishlist = () => toast("Added to Wishlist!");
+  const notify_wishlist_remove = () => toast("Removed from Wishlist!");
+
   const [data_Wishlist, setData_Wishlist] = useState([]);
   const encodedToken = localStorage.getItem("encodedToken");
 
@@ -30,6 +36,7 @@ export const WishlishContextHandler = ({ children }) => {
           })
           console.log( await resp.json() )
       }catch(e){ console.log(e) }
+      notify_wishlist()
   }
 
   const removeWishlistProduct = async ( product ) => {
@@ -40,6 +47,7 @@ export const WishlishContextHandler = ({ children }) => {
         headers: { authorization : encodedToken }
       })
     } catch(e) { console.log(e) }
+    notify_wishlist_remove()
   }
 
   return (

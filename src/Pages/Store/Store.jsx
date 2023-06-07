@@ -1,4 +1,7 @@
 import "./store.css";
+
+import { ToastContainer } from 'react-toastify';
+
 import Filters from "../../Component/Filters/filters";
 import { CartContext, ProductContext, WishlistContext } from "../../E-Commerse";
 
@@ -14,6 +17,7 @@ const Store = () => {
 
   return (
     <div>
+    <ToastContainer />
       <Link to="/" className="headerLink">
         <i class="fa fa-home" aria-hidden="true"></i>
       </Link>

@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { ToastContainer } from 'react-toastify';
 import "./loginPage.css";
 import { LoginContext } from "../../Context/LoginContext";
 import Header from "../../Component/Header/Header";
@@ -15,6 +16,7 @@ const LoginPage = () => {
   return (
     <div>
       <Header />
+      <ToastContainer />
 
       {token ? (
         <div>
