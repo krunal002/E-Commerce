@@ -17,6 +17,7 @@ export const CartContextHandler = ({ children }) => {
         headers: { authorization: encodedToken },
       });
       const reqData = await res.json();
+      console.log(reqData,"req")
       setCartData(reqData.cart);
     } catch (e) {
       console.log("error");

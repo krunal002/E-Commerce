@@ -47,6 +47,7 @@ export const ProductContextHandler = ({ children }) => {
     try {
       const response = await fetch("/api/products");
       const data = await response.json();
+      // console.log(data.products)
       setTempData(data.products);
     } catch (e) {
       console.log(e);

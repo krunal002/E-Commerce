@@ -12,6 +12,7 @@ const Store = () => {
   const navigate = useNavigate();
   const { productData } = useContext(ProductContext);
   const { cartData, addToCartHandler } = useContext(CartContext);
+  console.log(cartData)
   const { data_Wishlist, addToWishlistHandler, removeWishlistProduct } =
     useContext(WishlistContext);
 
