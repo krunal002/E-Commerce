@@ -1,57 +1,67 @@
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 export const CartContextHandler = ({ children }) => {
-    const notify_cart = () => toast("Added to Cart!");
-    const notify_remove = () => toast("Removed from Cart!");
+  const notify_cart = () =>
+    toast.success("Added to Cart!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  const notify_remove = () =>
+    toast.success("Removed from Cart!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   const [cartData, setCartData] = useState([]);
   const encodedToken = localStorage.getItem("encodedToken");
 
-  const getCartdata = async () => {
-    try {
-      const res = await fetch("/api/user/cart", {
-        headers: { authorization: encodedToken },
-      });
-      const reqData = await res.json();
-      console.log(await res.json(),"req")
-      setCartData(reqData.cart);
-    } catch (e) {
-      console.log("error");
-    }
-  };
-
-  useEffect(() => {
-    getCartdata();
-  });
-
   const addToCartHandler = async (product) => {
     try {
-      await fetch("/api/user/cart", {
+      const res = await fetch("/api/user/cart", {
         method: "POST",
         headers: { authorization: encodedToken },
         body: JSON.stringify({ product: product }),
       });
+      const result =  await res.json();
+      console.log(result);
+      setCartData(result.cart)
+      notify_cart();
     } catch (e) {
       console.log(e);
     }
-    notify_cart()
   };
 
   const removeProduct = async (product) => {
     const url = `/api/user/cart/${product._id}`;
     try {
-      await fetch(url, {
+      const res = await fetch(url, {
         method: "DELETE",
         headers: { authorization: encodedToken },
       });
+      const result =  await res.json();
+      console.log(result);
+      setCartData(result.cart)
+      notify_remove();
     } catch (e) {
       console.log(e);
     }
-    notify_remove()
+    
   };
 
   const incrementQuant = async (product) => {
