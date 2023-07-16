@@ -22,7 +22,7 @@ const Store = () => {
         </div>
 
         <div className="rightContainer">
-          <small>Number of products : {productData.length}</small>
+          <span className="product-number"><small>Available products - {productData.length}</small></span>
           {!productData.length ? (
             <h2>Nothing to Show</h2>
           ) : (
