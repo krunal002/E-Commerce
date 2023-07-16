@@ -76,7 +76,7 @@ export const LoginContextHandler = ({ children }) => {
       console.log("Test user login error : ", e);
     }
     
-    
+    console.log("LOC",location)
     navigate(location?.state?.from?.pathname);
   };
 
