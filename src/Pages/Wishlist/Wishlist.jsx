@@ -1,5 +1,5 @@
-import "./Wishlist.css"
-import { ToastContainer } from 'react-toastify';
+import "./Wishlist.css";
+import { ToastContainer } from "react-toastify";
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext, WishlistContext } from "../../E-Commerse";
@@ -9,11 +9,14 @@ const Wishlist = () => {
   const navigate = useNavigate();
   const { cartData, addToCartHandler } = useContext(CartContext);
 
-  const flag = data_Wishlist.length === 0 ? true : false;
+  const flag =
+    data_Wishlist?.length === 0 || data_Wishlist?.length === undefined
+      ? true
+      : false;
 
   return (
     <div>
-    <ToastContainer />
+      <ToastContainer />
       <Link to="/" className="headerLink">
         <i class="fa fa-home" aria-hidden="true"></i>
       </Link>
@@ -26,28 +29,33 @@ const Wishlist = () => {
       </Link>
 
       {flag ? (
-        <div>empty</div>
+        <div>
+          <h4>Wishlist is Empty</h4>
+        </div>
       ) : (
         <div className="wishlistContainer">
-          {data_Wishlist.map((product) => {
-            const addedToCart = cartData.find(({ _id }) => _id === product._id);
+          {data_Wishlist?.map((product) => {
+            const addedToCart = cartData?.find(
+              ({ _id }) => _id === product._id
+            );
 
             return (
               <div key={product.id} className="wishlistProducts">
-                
-                  <img
-                    src={product.image}
-                    alt="clothingImage"
-                    className="storeImage"
-                  />
-                
+                <img
+                  src={product.image}
+                  alt="clothingImage"
+                  className="storeImage"
+                />
 
                 <p>{product.name}</p>
                 <p>
                   <b>₹{product.sellingPrice}</b>{" "}
                   <span className="printedPrice">{product.price}</span>
                 </p>
-                <p><i class="fa fa-star" aria-hidden="true"></i> {product.rating}/5</p>
+                <p>
+                  <i class="fa fa-star" aria-hidden="true"></i> {product.rating}
+                  /5
+                </p>
                 <button
                   className="wishlistButton"
                   onClick={() =>
@@ -57,7 +65,12 @@ const Wishlist = () => {
                   <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
                   {addedToCart ? "Go to Cart" : "Add to Cart"}
                 </button>
-                <button className="wishlistButton" onClick={() => removeWishlistProduct(product)}>Remove</button>
+                <button
+                  className="wishlistButton"
+                  onClick={() => removeWishlistProduct(product)}
+                >
+                  Remove
+                </button>
               </div>
             );
           })}

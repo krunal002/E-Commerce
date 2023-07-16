@@ -44,10 +44,10 @@ const Store = () => {
           ) : (
             <div className="products">
               {productData.map((product) => {
-                const addedToCart = cartData.find(
+                const addedToCart = cartData?.find(
                   ({ _id }) => _id === product._id
                 );
-                const addedToWishlist = data_Wishlist.find(
+                const addedToWishlist = data_Wishlist?.find(
                   ({ _id }) => _id === product._id
                 );
 
