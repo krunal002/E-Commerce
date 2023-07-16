@@ -1,7 +1,9 @@
 import "./Cart.css";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import Header from "../../Component/Header/Header";
 import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const Cart = () => {
@@ -25,17 +27,8 @@ const Cart = () => {
 
   return (
     <div>
-    <ToastContainer />
-      <Link to="/" className="headerLink">
-        <i class="fa fa-home" aria-hidden="true"></i>
-      </Link>
-      <Link to="/cart" className="headerLink">
-        <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
-      </Link>
-      <Link to="/wishlist" className="headerLink">
-        {" "}
-        <i class="fa fa-heart" aria-hidden="true"></i>{" "}
-      </Link>
+      <ToastContainer />
+      <Header />
 
       {flag ? (
         <div>cart is empty</div>

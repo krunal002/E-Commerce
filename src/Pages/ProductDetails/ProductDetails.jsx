@@ -1,7 +1,8 @@
 import "./ProductDetails.css";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import "./ProductDetails.css";
+import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+
+import Header from "../../Component/Header/Header";
 import { CartContext } from "../../E-Commerse";
 
 const ProductDetails = () => {
@@ -30,9 +31,8 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <Link to="/store" className="headerLink">
-        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-      </Link>
+      <Header/>
+
       <div key={_id} className="singleProduct">
         <img src={image} alt="clothingImage" className="storeImage" />
         <p>

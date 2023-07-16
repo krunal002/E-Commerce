@@ -18,6 +18,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+
       <div className="categoryContainer">
         <h1>Get your Choice</h1>
 
@@ -38,8 +39,15 @@ const Home = () => {
         </div>
 
         <div className="collectionContainer">
-          <p className="collectionCategory" onClick={() => clickHandler("women")}>wedding Sarree collection</p>
-          <p className="collectionCategory" onClick={() => clickHandler("men")}>latest Kurta collection</p>
+          <p
+            className="collectionCategory"
+            onClick={() => clickHandler("women")}
+          >
+            wedding Sarree collection
+          </p>
+          <p className="collectionCategory" onClick={() => clickHandler("men")}>
+            latest Kurta collection
+          </p>
         </div>
       </div>
     </div>
