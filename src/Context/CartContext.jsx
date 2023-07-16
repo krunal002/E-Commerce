@@ -38,9 +38,8 @@ export const CartContextHandler = ({ children }) => {
         headers: { authorization: encodedToken },
         body: JSON.stringify({ product: product }),
       });
-      const result =  await res.json();
-      console.log(result);
-      setCartData(result.cart)
+      const result = await res.json();
+      setCartData(result.cart);
       notify_cart();
     } catch (e) {
       console.log(e);
@@ -54,20 +53,18 @@ export const CartContextHandler = ({ children }) => {
         method: "DELETE",
         headers: { authorization: encodedToken },
       });
-      const result =  await res.json();
-      console.log(result);
-      setCartData(result.cart)
+      const result = await res.json();
+      setCartData(result.cart);
       notify_remove();
     } catch (e) {
       console.log(e);
     }
-    
   };
 
   const incrementQuant = async (product) => {
     const url = `/api/user/cart/${product._id}`;
     try {
-      await fetch(url, {
+      const res = await fetch(url, {
         method: "POST",
         headers: { authorization: encodedToken },
         body: JSON.stringify({
@@ -76,14 +73,17 @@ export const CartContextHandler = ({ children }) => {
           },
         }),
       });
+      const result = await res.json();
+      setCartData(result.cart);
     } catch (e) {
       console.log(e);
     }
   };
+
   const decrementQuant = async (product) => {
     const url = `/api/user/cart/${product._id}`;
     try {
-      await fetch(url, {
+      const res = await fetch(url, {
         method: "POST",
         headers: { authorization: encodedToken },
         body: JSON.stringify({
@@ -92,10 +92,13 @@ export const CartContextHandler = ({ children }) => {
           },
         }),
       });
+      const result = await res.json();
+      setCartData(result.cart);
     } catch (e) {
       console.log(e);
     }
   };
+
   return (
     <CartContext.Provider
       value={{
