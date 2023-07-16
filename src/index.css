@@ -17,10 +17,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-#siteName{
-  font-family: 'Satisfy', cursive;
-  font-size: xx-large;
-  color: darkcyan;
-  text-shadow: 2px 2px 1px 3px;
-}

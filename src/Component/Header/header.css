@@ -1,37 +1,47 @@
-.header{
-    color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+
+:root {
+  --background-color: #fff1f2;
+  --primary-color: #881337;
+  --complementary-color: #e11d48;
+  --secondary-color: #fb7185;
+  --tertiary-color: #ffe4e6;
 }
-.headerLink{
-    font-size: x-large;
-    margin: 0 1rem;
-    color: gray;
-    text-decoration: none;
+
+.header {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-bottom: 1px solid var(--primary-color);
 }
-.headerButton{
-    color: white;
-    background-color: gray;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
+
+.header h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.searchContainer{
-    background-color: #e2e8f0;
-    border-radius: 10px;
+.header h1::first-letter {
+    background-color: var(--primary-color);
+    padding: 0 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  color: var(--background-color);
+  font-size: 3rem;
 }
-.search {
-    background-color: #e2e8f0;
-    width: 20rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 10px;
+
+.headerLink {
+  font-size: x-large;
+  margin: 0 1rem;
+  color: var(--complementary-color);
+  text-decoration: none;
 }
-.searchContainer button {
-    background-color: #e2e8f0;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 10px;
+
+.headerButton {
+  color: var(--background-color);
+  background-color: var(--complementary-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0 0 2rem;
+  border-radius: 5px;
+  cursor: pointer;
 }

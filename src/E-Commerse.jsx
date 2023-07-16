@@ -26,8 +26,6 @@ export { WishlistContext }
 const ECommerse = () => {
   return (
     <div>
-      <h1 id="siteName">Outfit_Adda</h1>
-
       <Routes>
         <Route path="/mockman" element={<Mockman />} />
         <Route path="/" element={<Home />} />
