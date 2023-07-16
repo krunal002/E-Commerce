@@ -64,7 +64,7 @@ export const WishlishContextHandler = ({ children }) => {
 
   return (
     <WishlistContext.Provider
-      value={{ data_Wishlist, addToWishlistHandler, removeWishlistProduct }}
+      value={{ data_Wishlist, setData_Wishlist, addToWishlistHandler, removeWishlistProduct }}
     >
       {children}
     </WishlistContext.Provider>

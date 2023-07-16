@@ -70,14 +70,11 @@ export const LoginContextHandler = ({ children }) => {
       setToken(result.encodedToken);
       localStorage.setItem("encodedToken", result.encodedToken);
       localStorage.setItem("user", JSON.stringify(result.foundUser));
+      navigate(location?.state?.from?.pathname);
       notify();
-      console.log(result);
     } catch (e) {
       console.log("Test user login error : ", e);
     }
-    
-    console.log("LOC",location)
-    navigate(location?.state?.from?.pathname);
   };
 
   const [state, dispatch] = useReducer(reducerFun, initialValues);

@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const Wishlist = () => {
-  const { data_Wishlist, removeWishlistProduct } = useContext(WishlistContext);
+  const { data_Wishlist, setData_Wishlist, removeWishlistProduct } = useContext(WishlistContext);
   const navigate = useNavigate();
   const { cartData, addToCartHandler } = useContext(CartContext);
 
@@ -33,7 +33,8 @@ const Wishlist = () => {
           <h4>Wishlist is Empty</h4>
         </div>
       ) : (
-        <div className="wishlistContainer">
+        <div>
+          <div className="wishlistContainer">
           {data_Wishlist?.map((product) => {
             const addedToCart = cartData?.find(
               ({ _id }) => _id === product._id
@@ -74,6 +75,9 @@ const Wishlist = () => {
               </div>
             );
           })}
+          
+        </div>
+        <button onClick={() => setData_Wishlist([])}>Empty Wishlist</button>
         </div>
       )}
     </div>
