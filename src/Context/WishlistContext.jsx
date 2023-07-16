@@ -36,7 +36,7 @@ export const WishlishContextHandler = ({ children }) => {
               body: JSON.stringify({ product:product })
           })
           console.log( await resp.json() )
-      }catch(e){ console.log(e) }
+      }catch(e){ console.log("ERROR - add to wishlist") }
       notify_wishlist()
   }
 

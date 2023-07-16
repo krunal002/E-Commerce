@@ -1,6 +1,6 @@
 import { createContext, useReducer, useState } from "react";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useLocation, useNavigate } from "react-router-dom";
 export const LoginContext = createContext();
 
@@ -35,24 +35,23 @@ export const LoginContextHandler = ({ children }) => {
         email: state.email,
         password: state.password,
       };
-      
+
       const res = await fetch("/api/auth/login", {
         method: "POST",
         body: JSON.stringify(user),
       });
 
       const result = await res.json();
-      setCurrUser(result.foundUser)
+      setCurrUser(result.foundUser);
+      setToken(result.encodedToken);
       localStorage.setItem("encodedToken", result.encodedToken);
-      setToken(localStorage.getItem("encodedToken"))
+      localStorage.setItem("user", JSON.stringify(result.foundUser));
+      notify();
     } catch (e) {
-      console.log("error : ",e);
+      console.log("error : ", e);
     }
-    setToken(tokenResult());
-    navigate(location?.state?.from?.pathname)
+    navigate(location?.state?.from?.pathname);
   };
-
-
 
   const testUser = async () => {
     try {
@@ -60,37 +59,47 @@ export const LoginContextHandler = ({ children }) => {
         email: "adarshbalika@gmail.com",
         password: "adarshbalika",
       };
-      
+
       const res = await fetch("/api/auth/login", {
         method: "POST",
         body: JSON.stringify(user),
       });
 
       const result = await res.json();
-      setCurrUser(result.foundUser)
+      setCurrUser(result.foundUser);
+      setToken(result.encodedToken);
       localStorage.setItem("encodedToken", result.encodedToken);
+      localStorage.setItem("user", JSON.stringify(result.foundUser));
+      notify();
+      console.log(result);
     } catch (e) {
-      console.log("error : ", e);
+      console.log("Test user login error : ", e);
     }
-    notify()
-    setToken(tokenResult());
-    navigate(location?.state?.from?.pathname)
-  };
-
-  const tokenResult = () => {
-    return localStorage.getItem("encodedToken")==="undefined" ? false : true;
+    
+    
+    navigate(location?.state?.from?.pathname);
   };
 
   const [state, dispatch] = useReducer(reducerFun, initialValues);
 
   const logout = () => {
-    setToken(false)
-  }
+    setToken(false);
+    localStorage.removeItem("encodedToken");
+    localStorage.removeItem("user");
+  };
 
   return (
     <div>
       <LoginContext.Provider
-        value={{ token, testUser, loginHandler, state, dispatch, currUser, logout }}
+        value={{
+          token,
+          testUser,
+          loginHandler,
+          state,
+          dispatch,
+          currUser,
+          logout,
+        }}
       >
         {children}
       </LoginContext.Provider>
