@@ -17,9 +17,10 @@ export const WishlishContextHandler = ({ children }) => {
         headers: { authorization: encodedToken },
       });
       const reqData = await res.json();
+      console.log(await res.json())
       setData_Wishlist( reqData.wishlist );
     } catch (e) {
-      console.log("error");
+      console.log("wishlist error");
     }
   };
 
