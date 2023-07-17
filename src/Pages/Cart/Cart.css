@@ -20,47 +20,84 @@
 }
 
 /* Cart with products */
-.initial{
+.cart-product-container{
     margin: 1rem;
     padding: 0.5rem;
     display: flex;
     border-radius: 0.5rem;
     box-shadow: 1px 1px 3px 2px gray;
+    background-color: var(--tertiary-color);
 }
-.information{
+
+.cart-productImage{
+    width: 12rem;
+    height: 18rem;
+    border-radius: 0.5rem;
+}
+
+/* Cart Information */
+.cart-product-info{
     padding: 1rem;
     text-align: left;
 }
+.cart-product-details h2{
+    color: var(--complementary-color);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
-.rightCartContainer{
-   text-align: left;
-    margin: 1rem;
+}
+.cart-product-price{
+    font-size: large;
+}
+.cart-product-price span{
+    color: gray;
+    text-decoration: line-through;
+    font-size: small;
+}
+
+.quantity-container{
     padding: 1rem;
-    box-shadow: 1px 1px 3px 2px gray;
+    margin: 5px;
     border-radius: 0.5rem;
-    height: 19rem;
-    width: 23rem;
+    font-weight: bold;
+    background-color: var(--background-color);
+    text-align: center;
 }
-.final{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.quantity-container span {
+    margin: 0 1rem;
+    cursor: pointer;
 }
 
-.fullButton{
+.cart-button{
     margin: 5px;
-    width: 10rem;
     padding: 0.5rem;
-    
+    border: 1px solid lightgray;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    background-color: var(--background-color);
+    color: gray;
+    cursor: pointer;
 }
-.finalButton{
+
+
+
+/* Right container */
+.rightCartContainer{
+    text-align: left;
+     margin: 1rem;
+     padding: 1rem;
+     box-shadow: 1px 1px 3px 2px gray;
+     border-radius: 0.5rem;
+     height: 19rem;
+     width: 23rem;
+ }
+ .final{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .finalButton{
     width: 100%;
     padding: 0.8rem;
     background-color: cornflowerblue;
-}
-.quantityBtn{
-    padding: 0.5rem 1rem;
-    margin: 5px;
-    border-radius: 20px;
-    border: none;
 }

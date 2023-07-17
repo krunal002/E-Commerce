@@ -1,5 +1,6 @@
 import "./Cart.css";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -7,6 +8,18 @@ import Header from "../../Component/Header/Header";
 import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const Cart = () => {
+  const quantZero = () =>
+    toast.warn("'Quantity can't be zero!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
   const navigate = useNavigate();
   const { cartData, removeProduct, incrementQuant, decrementQuant } =
     useContext(CartContext);
@@ -44,52 +57,74 @@ const Cart = () => {
             <div className="leftCartContainer">
               {cartData.map((product) => {
                 return (
-                  <div key={product.id} className="initial">
+                  <div key={product.id} className="cart-product-container">
                     <div className="image">
                       <img
                         src={product.image}
-                        alt="clothingImage"
-                        className="storeImage"
+                        alt="productImage"
+                        className="cart-productImage"
                       />
                     </div>
 
-                    <div className="information">
-                      <div className="value">
-                        <p>{product.name}</p>
-                        <b>
-                          ₹{product.sellingPrice}{" "}
-                          <span className="printedPrice">{product.price}</span>
+                    <div className="cart-product-info">
+                      <div className="cart-product-details">
+                        <h2>{product.name}</h2>
+                        <b className="cart-product-price">
+                          <span>{product.price}</span>{" "}
+                          ₹{product.sellingPrice}
                         </b>
-                        <p>Rating : {product.rating}/5</p>
-                        <div>
-                          <button
-                            className="quantityBtn"
-                            onClick={() => decrementQuant(product)}
-                            disabled={product.qty === 0}
+
+                        <p>
+                          {Array(product.rating)
+                            .fill()
+                            .map((_, index) => (
+                              <span key={index} className="product-rating">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                              </span>
+                            ))}
+                        </p>
+                        <div className="quantity-container">
+                          <span
+                            onClick={() =>
+                              product.qty <= 1
+                                ? quantZero()
+                                : decrementQuant(product)
+                            }
                           >
-                            <b>-</b>
-                          </button>
-                          <button className="quantityBtn">{product.qty}</button>
-                          <button
-                            className="quantityBtn"
-                            onClick={() => incrementQuant(product)}
-                          >
-                            <b>+</b>
-                          </button>
+                            <b>
+                              <i
+                                class="fa fa-minus-square"
+                                aria-hidden="true"
+                              ></i>
+                            </b>
+                          </span>
+                          <span>{product.qty}</span>
+                          <span onClick={() => incrementQuant(product)}>
+                            <b>
+                              <i
+                                class="fa fa-plus-square"
+                                aria-hidden="true"
+                              ></i>
+                            </b>
+                          </span>
                         </div>
                       </div>
-                      <button
-                        className="fullButton"
-                        onClick={() => wishlisthandler(product)}
-                      >
-                        Move to wishlist
-                      </button>
-                      <button
-                        className="fullButton"
-                        onClick={() => removeProduct(product)}
-                      >
-                        Remove
-                      </button>
+
+                      {/* Buttons */}
+                      <div className="cart-button-container">
+                        <button
+                          className="cart-button"
+                          onClick={() => wishlisthandler(product)}
+                        >
+                          Move to Wishlist
+                        </button>
+                        <button
+                          className="cart-button"
+                          onClick={() => removeProduct(product)}
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
                 );
