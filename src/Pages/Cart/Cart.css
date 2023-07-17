@@ -1,103 +1,131 @@
 :root {
-    --background-color: #fff1f2;
-    --primary-color: #881337;
-    --complementary-color: #e11d48;
-    --secondary-color: #fb7185;
-    --tertiary-color: #ffe4e6;
-  }
+  --background-color: #fff1f2;
+  --primary-color: #881337;
+  --complementary-color: #e11d48;
+  --secondary-color: #fb7185;
+  --tertiary-color: #ffe4e6;
+}
 
 .cartContainer {
-    margin: 1rem auto;
-    max-width: 1000px; 
-    display: flex;
-    justify-content: space-between;
+  margin: 1rem auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Empty Cart */
-.empty-cart{
-    padding-top: 10%;
-    color: var(--primary-color);
+.empty-cart {
+  padding-top: 10%;
+  color: var(--primary-color);
 }
 
 /* Cart with products */
-.cart-product-container{
-    margin: 1rem;
-    padding: 0.5rem;
-    display: flex;
-    border-radius: 0.5rem;
-    box-shadow: 1px 1px 3px 2px gray;
-    background-color: var(--tertiary-color);
+.cart-product-container {
+  margin: 1rem;
+  padding: 0.5rem;
+  display: flex;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px 2px gray;
+  background-color: var(--tertiary-color);
 }
 
-.cart-productImage{
-    width: 12rem;
-    height: 18rem;
-    border-radius: 0.5rem;
+.cart-productImage {
+  width: 12rem;
+  height: 15rem;
+  border-radius: 0.5rem;
 }
 
 /* Cart Information */
-.cart-product-info{
-    padding: 1rem;
-    text-align: left;
+.cart-product-info {
+  padding: 0 1rem;
+  text-align: left;
 }
-.cart-product-details h2{
-    color: var(--complementary-color);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+.cart-product-details h2 {
+  color: var(--complementary-color);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-.cart-product-price{
-    font-size: large;
+.cart-product-price {
+  font-size: large;
+  display: flex;
+  justify-content: space-between;
 }
-.cart-product-price span{
-    color: gray;
-    text-decoration: line-through;
-    font-size: small;
+.cart-product-price span {
+  color: gray;
+  text-decoration: line-through;
+  font-size: small;
 }
-
-.quantity-container{
-    padding: 1rem;
-    margin: 5px;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    background-color: var(--background-color);
-    text-align: center;
+.price-discount {
+  color: #0cb14e;
+}
+.quantity-container {
+  padding: 1rem;
+  margin: 5px;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  background-color: var(--background-color);
+  text-align: center;
 }
 .quantity-container span {
-    margin: 0 1rem;
-    cursor: pointer;
+  margin: 0 1rem;
+  cursor: pointer;
 }
 
-.cart-button{
-    margin: 5px;
-    padding: 0.5rem;
-    border: 1px solid lightgray;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    background-color: var(--background-color);
-    color: gray;
-    cursor: pointer;
+.cart-button-container {
+  display: flex;
+  justify-content: space-between;
 }
-
-
+.cart-button {
+  margin: 5px;
+  padding: 0.5rem 1rem;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  background-color: var(--background-color);
+  color: gray;
+  cursor: pointer;
+}
 
 /* Right container */
-.rightCartContainer{
-    text-align: left;
-     margin: 1rem;
-     padding: 1rem;
-     box-shadow: 1px 1px 3px 2px gray;
-     border-radius: 0.5rem;
-     height: 19rem;
-     width: 23rem;
- }
- .final{
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
+.placeorder-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--tertiary-color);
+  box-shadow: 1px 1px 3px 2px gray;
+}
+.placeorder-container h3{
+    color: var(--complementary-color);
+    margin: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid;
+    text-align: center;
+}
+.placeorder-container span{
+    margin-top: 2rem;
+    padding: 1rem 0.5rem;
+    border-top: 1px solid;
+    text-align: center;
+}
 
- .finalButton{
-    width: 100%;
-    padding: 0.8rem;
-    background-color: cornflowerblue;
+
+.final {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.placeorder-button {
+  color: var(--background-color);
+  background-color: var(--complementary-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.placeorder-button p{
+    font-size: large;
+    margin: 0;
+    padding: 0.7rem;
+
 }

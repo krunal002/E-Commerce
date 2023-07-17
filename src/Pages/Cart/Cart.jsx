@@ -8,8 +8,20 @@ import Header from "../../Component/Header/Header";
 import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const Cart = () => {
-  const quantZero = () =>
-    toast.warn("'Quantity can't be zero!", {
+  const minQuantity = () =>
+    toast.warn("Minimum quantity reached!", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
+  const maxQuantity = () =>
+    toast.warn("Maximum quantity reached!", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -32,11 +44,19 @@ const Cart = () => {
 
   const flag = cartData.length === 0 ? true : false;
   const price = cartData.reduce(
+    (acc, curr) => (acc += curr.price * curr.qty),
+    0
+  );
+  const totalPtice = cartData.reduce(
     (acc, curr) => (acc += curr.sellingPrice * curr.qty),
     0
   );
-  const totalPtice = Math.round(price - price / 4);
   const priceSave = price - totalPtice;
+  const totalDiscount = Math.round((totalPtice / price) * 100);
+  const deliveryCharges = cartData.reduce(
+    (acc, curr) => (acc += curr.delivery * curr.qty),
+    0
+  );
 
   return (
     <div>
@@ -49,13 +69,22 @@ const Cart = () => {
             <i class="fa fa-cart-plus fa-5x" aria-hidden="true"></i>
           </div>
           <h1>Cart is Empty</h1>
-          <button onClick={() => navigate("/store")}>Go to Store</button>
+          <button
+            onClick={() => navigate("/store")}
+            className="cart-button"
+            style={{ border: "2px solid", color: "black" }}
+          >
+            Go to Store
+          </button>
         </div>
       ) : (
         <div className="cart">
           <div className="cartContainer">
             <div className="leftCartContainer">
               {cartData.map((product) => {
+                const discount = Math.round(
+                  (product.sellingPrice / product.price) * 100
+                );
                 return (
                   <div key={product.id} className="cart-product-container">
                     <div className="image">
@@ -70,11 +99,15 @@ const Cart = () => {
                       <div className="cart-product-details">
                         <h2>{product.name}</h2>
                         <b className="cart-product-price">
-                          <span>{product.price}</span>{" "}
-                          ₹{product.sellingPrice}
+                          <div>
+                            <span>₹{product.price}</span> ₹
+                            {product.sellingPrice}
+                          </div>
+                          <div className="price-discount">{discount}% off</div>
                         </b>
 
                         <p>
+                          Ratings :{" "}
                           {Array(product.rating)
                             .fill()
                             .map((_, index) => (
@@ -83,11 +116,12 @@ const Cart = () => {
                               </span>
                             ))}
                         </p>
+
                         <div className="quantity-container">
                           <span
                             onClick={() =>
                               product.qty <= 1
-                                ? quantZero()
+                                ? minQuantity()
                                 : decrementQuant(product)
                             }
                           >
@@ -98,8 +132,14 @@ const Cart = () => {
                               ></i>
                             </b>
                           </span>
-                          <span>{product.qty}</span>
-                          <span onClick={() => incrementQuant(product)}>
+                          <span>Quntity : {product.qty}</span>
+                          <span
+                            onClick={() =>
+                              product.qty >= 5
+                                ? maxQuantity()
+                                : incrementQuant(product)
+                            }
+                          >
                             <b>
                               <i
                                 class="fa fa-plus-square"
@@ -131,34 +171,38 @@ const Cart = () => {
               })}
             </div>
 
-            <div className="rightCartContainer">
-              <b>Price Details</b>
-              <hr></hr>
-              <div className="final">
-                <div className="key">
-                  <p>Price : </p>
-                  <p>Discount : </p>
-                  <p>Delivery Charges : </p>
-                  <b>Total Amount : </b>
+            {/* Right Container */}
+            <div>
+              <div className="placeorder-container">
+                <h3>Price Details</h3>
+
+                <div className="final">
+                  <div className="key">
+                    <p>Price : </p>
+                    <p>Discount : </p>
+                    <p>Delivery Charges : </p>
+                    <b>Total Amount : </b>
+                  </div>
+
+                  <div className="value">
+                    <p>₹{price}</p>
+                    <p>{totalDiscount}% off</p>
+                    <p>{deliveryCharges===0 ?"Free" :deliveryCharges}</p>
+                    <b>₹{totalPtice}</b>
+                  </div>
                 </div>
 
-                <div className="value">
-                  <p>{price}</p>
-                  <p>25%</p>
-                  <p>Free</p>
-                  <b>{totalPtice}</b>
-                </div>
+                <span>
+                  You will save total <b>₹{priceSave}</b> on this order
+                </span>
+
+                <button
+                  className="placeorder-button"
+                  onClick={() => navigate("/placeorder")}
+                >
+                  <p>Place Order</p>
+                </button>
               </div>
-              <hr></hr>
-              <p>
-                You will save total <b>₹{priceSave}</b> on this order
-              </p>
-              <button
-                className="finalButton"
-                onClick={() => navigate("/placeorder")}
-              >
-                <b>Place Order</b>
-              </button>
             </div>
           </div>
         </div>
