@@ -31,7 +31,13 @@ const Cart = () => {
       <Header />
 
       {flag ? (
-        <div>cart is empty</div>
+        <div className="empty-cart">
+          <div>
+            <i class="fa fa-cart-plus fa-5x" aria-hidden="true"></i>
+          </div>
+          <h1>Cart is Empty</h1>
+          <button onClick={() => navigate("/store")}>Go to Store</button>
+        </div>
       ) : (
         <div className="cart">
           <div className="cartContainer">

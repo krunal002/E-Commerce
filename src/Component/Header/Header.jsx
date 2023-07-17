@@ -25,7 +25,7 @@ const Header = () => {
 
             {/* cart */}
             <Link to="/cart" className="headerLink">
-              <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>{" "}
             </Link>
 
             {/* wishlist */}

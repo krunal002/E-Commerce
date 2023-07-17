@@ -1,3 +1,11 @@
+:root {
+    --background-color: #fff1f2;
+    --primary-color: #881337;
+    --complementary-color: #e11d48;
+    --secondary-color: #fb7185;
+    --tertiary-color: #ffe4e6;
+  }
+
 .cartContainer {
     margin: 1rem auto;
     max-width: 1000px; 
@@ -5,6 +13,13 @@
     justify-content: space-between;
 }
 
+/* Empty Cart */
+.empty-cart{
+    padding-top: 10%;
+    color: var(--primary-color);
+}
+
+/* Cart with products */
 .initial{
     margin: 1rem;
     padding: 0.5rem;

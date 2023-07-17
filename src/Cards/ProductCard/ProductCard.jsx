@@ -20,6 +20,7 @@ const ProductCard = ({ products }) => {
 
           return (
             <div key={product._id} className="product-container">
+              <div className="product-shadow">
               <div className="product-pic">
                 <div
                   onClick={() =>
@@ -62,6 +63,7 @@ const ProductCard = ({ products }) => {
                       </span>
                     ))}
                 </div>
+              </div>
               </div>
 
               <button
