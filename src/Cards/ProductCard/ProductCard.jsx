@@ -10,7 +10,7 @@ const ProductCard = ({ products }) => {
     useContext(WishlistContext);
 
   return (
-    <div>
+    <div className="primary-product-container">
       <div className="products">
         {products.map((product) => {
           const addedToCart = cartData?.find(({ _id }) => _id === product._id);
@@ -19,37 +19,50 @@ const ProductCard = ({ products }) => {
           );
 
           return (
-            <div key={product._id} className="storeProducts">
-              <div
-                onClick={() =>
-                  addedToWishlist
-                    ? removeWishlistProduct(product)
-                    : addToWishlistHandler(product)
-                }
-                className="wishlistIcon"
-              >
-                {addedToWishlist ? (
-                  <i class="fa fa-heart" aria-hidden="true"></i>
-                ) : (
-                  <i class="fa fa-heart-o" aria-hidden="true"></i>
-                )}
+            <div key={product._id} className="product-container">
+              <div className="product-pic">
+                <div
+                  onClick={() =>
+                    addedToWishlist
+                      ? removeWishlistProduct(product)
+                      : addToWishlistHandler(product)
+                  }
+                  className="wishlistIcon"
+                >
+                  {addedToWishlist ? (
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                  ) : (
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                  )}
+                </div>
+                <div>
+                  <Link to={`/details/${product._id}`}>
+                    <img
+                      src={product.image}
+                      alt="productImage"
+                      className="productImage"
+                    />
+                  </Link>
+                </div>
               </div>
-              <Link to={`/details/${product._id}`}>
-                <img
-                  src={product.image}
-                  alt="clothingImage"
-                  className="storeImage"
-                />
-              </Link>
 
-              <p>
-                <b>{product.name}</b>
-              </p>
-              <p>
-                ₹{product.sellingPrice}{" "}
-                <small className="printedPrice">{product.price}</small>
-              </p>
-              <p>Rating : {product.rating}/5</p>
+              <div className="product-info">
+                <div>
+                  <b>{product.name}</b>
+                </div>
+                <div className="printedPrice">
+                  <small>{product.price}</small> ₹{product.sellingPrice}
+                </div>
+                <div>
+                  {Array(product.rating)
+                    .fill()
+                    .map((_, index) => (
+                      <span key={index} className="product-rating">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                      </span>
+                    ))}
+                </div>
+              </div>
 
               <button
                 className="cartButton"

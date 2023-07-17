@@ -1,37 +1,83 @@
-.storeImage {
-  width: 12rem;
-  height: 16rem;
+:root {
+  --background-color: #fff1f2;
+  --primary-color: #881337;
+  --complementary-color: #e11d48;
+  --secondary-color: #fb7185;
+  --tertiary-color: #ffe4e6;
 }
+
+.primary-product-container{
+    max-width: 900px;
+    margin: auto ;
+    padding: 1rem;
+}
+
+
 .products {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  max-width: 900px;
+  justify-content: space-around;
+  gap: 1rem;
 }
-.storeProducts {
-  background-color: white;
+.product-container {
+  background-color: transparent ;
   box-shadow: 2px 3px 5px 3px gray;
-  height: 26rem;
-  text-align: center;
-  margin: 0.8rem;
-  line-height: 5px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
-.printedPrice {
+
+.product-pic{
+  position: relative;
+  height: 16rem;
+}
+.wishlistIcon {
+  margin: 0.5rem;
+  border-radius: 100px;
+  background-color: var(--background-color);
+  color: var(--complementary-color);
+  position: absolute;
+  padding: 0.2rem 0.4rem;
+  right: 0;
+  cursor: pointer;
+}
+.productImage {
+  width: 12rem;
+  height: 16rem;
+}
+.productImage:hover {
+  width: 12.2rem;
+  height: 16.2rem;
+  overflow: auto;
+}
+
+.product-info{
+  margin: 0;
+  background-color: var(--background-color);
+  padding: 0.5rem;
+}
+.product-info b{
+  color: var(--complementary-color);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.printedPrice{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.printedPrice small {
   color: gray;
   text-decoration: line-through;
 }
-.storeProducts button {
-  width: 100%;
-  height: 10%;
-  border: 1px solid lightgray;
-  cursor: pointer;
+.product-rating{
+  margin: 0 0.1rem;
+  color: gray;
 }
 .cartButton {
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border: none;
+  padding: 0.5rem;
+  color: var(--tertiary-color);
+  background-color: var(--secondary-color);
 }
-.wishlistIcon {
-  padding: 1rem;
+.cartButton:hover{
+  background-color: var(--complementary-color);
 }
+

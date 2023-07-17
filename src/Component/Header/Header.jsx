@@ -8,7 +8,7 @@ const Header = () => {
     <div>
       <div className="header">
         <div>
-          <h1>Zarina's</h1>
+          <h1>Pristiiine</h1>
         </div>
 
         <div>
