@@ -31,31 +31,40 @@ const ProductDetails = () => {
 
   return (
     <div>
-      <Header/>
+      <Header />
 
-      <div key={_id} className="singleProduct">
-        <img src={image} alt="clothingImage" className="storeImage" />
-        <p>
-          <h1>{name}</h1>
-          <h3>
-            ₹{sellingPrice} <small className="printedPrice">{price}</small>
-          </h3>{" "}
-        </p>
-        <p>
-          Flat : <b className="discount">{discount}</b> off
-        </p>
-        <p>Rating : {rating}/5</p>
-        <button
-          className="detailsBtn"
-          onClick={() =>
-            addedToCart
-              ? navigate("/cart")
-              : addToCartHandler(productDetailsData)
-          }
-        >
-          <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
-          {addedToCart ? "Go to Cart" : "Add to Cart"}
-        </button>
+      <div key={_id} className="productDetail-container">
+        <div className="productDetail-image-container">
+          <img
+            src={image}
+            alt="clothingImage"
+            className="productDetail-image"
+          />
+        </div>
+
+        <div className="productDetail-info">
+          <p>
+            <h1>{name}</h1>
+            <h3 className="productDetail-price">
+              <small>₹{price}</small>{" "}₹{sellingPrice} 
+            </h3>
+          </p>
+          <p>
+            Flat : <b className="discount">{discount}</b> off
+          </p>
+          <p>Rating : {rating}/5</p>
+          <button
+            className="detailsBtn"
+            onClick={() =>
+              addedToCart
+                ? navigate("/cart")
+                : addToCartHandler(productDetailsData)
+            }
+          >
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
+            {addedToCart ? "Go to Cart" : "Add to Cart"}
+          </button>
+        </div>
       </div>
     </div>
   );
