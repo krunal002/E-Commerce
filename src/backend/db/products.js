@@ -9,6 +9,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Classic Brown",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "men",
     isStarred: false,
     sellingPrice: 999,
@@ -21,6 +22,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Floral Print",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "kids",
     isStarred: false,
     sellingPrice: 499,
@@ -33,6 +35,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Poly Georgette",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "women",
     isStarred: false,
     sellingPrice: 569,
@@ -45,6 +48,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Western Meta Blue",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "men",
     isStarred: true,
     sellingPrice: 449,
@@ -57,6 +61,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Denim teal",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "men",
     isStarred: false,
     sellingPrice: 999,
@@ -69,6 +74,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Casual Mix",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "kids",
     isStarred: false,
     sellingPrice: 799,
@@ -81,6 +87,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Rayon Anarkali",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "women",
     isStarred: false,
     sellingPrice: 669,
@@ -93,6 +100,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Denim Dress",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "kids",
     isStarred: false,
     sellingPrice: 899,
@@ -105,6 +113,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Fit & Flare",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "women",
     isStarred: false,
     sellingPrice: 499,
@@ -117,6 +126,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Hooded Tracksuit",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "kids",
     isStarred: false,
     sellingPrice: 599,
@@ -129,6 +139,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Italian Fabric",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "men",
     isStarred: false,
     sellingPrice: 999,
@@ -141,6 +152,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Skirt Midi",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "women",
     isStarred: false,
     sellingPrice: 799,

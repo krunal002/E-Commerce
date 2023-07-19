@@ -20,12 +20,16 @@
   justify-content: space-around;
   gap: 1rem;
 }
+
 .product-container {
   background-color: transparent ;
-  
   display: flex;
   flex-direction: column;
 }
+.product-container:hover {
+  box-shadow: 3px 3px 5px 2px var(--secondary-color);
+}
+
 .product-shadow{
   box-shadow: 2px 2px 5px 2px gray;
   z-index: 1;

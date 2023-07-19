@@ -22,7 +22,7 @@ const ProductDetails = () => {
     getProductDetails();
   });
 
-  const { _id, name, image, sellingPrice, rating, price } = productDetailsData;
+  const { _id, name, desc, image, sellingPrice, rating, price } = productDetailsData;
 
   const discount = price - sellingPrice;
 
@@ -54,6 +54,7 @@ const ProductDetails = () => {
 
         <div className="productDetail-info">
           <h1>{name}</h1>
+          <p className="description">{desc}</p>
           <div className="productDetails-price-container">
             <h3 className="productDetail-price">
               <small>₹{price}</small> ₹{sellingPrice}
@@ -105,7 +106,7 @@ const ProductDetails = () => {
       </div>
 
       {/* store button */}
-      <button className="productButton" onClick={() => navigate("/store")}>
+      <button className="productButton" onClick={() => navigate("/store")} style={{backgroundColor:"lightgray", color:"black"}}>
         Store
       </button>
     </div>

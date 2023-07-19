@@ -29,7 +29,9 @@
     color: var(--primary-color);
     border-bottom: 1px solid;
 }
-
+.productDetail-info .description{
+  width: 300px;
+}
 .productDetails-price-container{
   display: flex;
   justify-content: space-between;
