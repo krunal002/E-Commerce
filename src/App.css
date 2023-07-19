@@ -54,3 +54,20 @@ body {
   font-size: 1.2rem;
   margin: 1rem;
 }
+
+.productButton{
+  margin: 1rem;
+  padding: 1rem 3rem;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.productButton:hover{
+  color: var(--background-color);
+  background-color: var(--complementary-color);
+  font-weight: bold;
+  box-shadow: 1px  1px 4px 1px gray;
+}

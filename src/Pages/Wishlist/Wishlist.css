@@ -1,3 +1,11 @@
+:root {
+    --background-color: #fff1f2;
+    --primary-color: #881337;
+    --complementary-color: #e11d48;
+    --secondary-color: #fb7185;
+    --tertiary-color: #ffe4e6;
+  }
+
 .wishlistContainer{
     margin: auto;
     max-width: 800px;
@@ -13,7 +21,22 @@
     line-height: 5px;
 }
 .wishlistButton{
-    margin: 0.2rem;
-    width: 90%;
-    padding: 0.5rem;
+    margin: 2rem;
+    padding: 1rem 3rem;
+    color: var(--background-color);
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
+
+.wishlistButton:hover{
+    margin: 1.9rem;
+    padding: 1.1rem 3.1rem;
+    color: var(--background-color);
+    background-color: var(--complementary-color);
+    font-weight: bold;
+    box-shadow: 1px  1px 4px 1px gray;
+}
+
+

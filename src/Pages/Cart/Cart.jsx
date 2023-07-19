@@ -33,7 +33,7 @@ const Cart = () => {
     });
 
   const navigate = useNavigate();
-  const { cartData, removeProduct, incrementQuant, decrementQuant } =
+  const { cartData, setCartData, removeProduct, incrementQuant, decrementQuant } =
     useContext(CartContext);
   const { addToWishlistHandler } = useContext(WishlistContext);
 
@@ -71,8 +71,7 @@ const Cart = () => {
           <h1>Cart is Empty</h1>
           <button
             onClick={() => navigate("/store")}
-            className="cart-button"
-            style={{ border: "2px solid", color: "black" }}
+            className="wishlistButton"
           >
             Go to Store
           </button>
@@ -203,6 +202,7 @@ const Cart = () => {
                   <p>Place Order</p>
                 </button>
               </div>
+              <button onClick={() => setCartData([])} className="wishlistButton">Empty Cart</button>
             </div>
           </div>
         </div>

@@ -80,6 +80,7 @@
   background-color: var(--secondary-color);
   box-shadow: 2px 4px 5px 1px gray;
   z-index: 2;
+  cursor: pointer;
 }
 .cartButton:hover{
   background-color: var(--complementary-color);

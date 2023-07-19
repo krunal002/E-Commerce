@@ -3,11 +3,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
 import Header from "../../Component/Header/Header";
-import { CartContext } from "../../E-Commerse";
+import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
-  const { cartData, addToCartHandler } = useContext(CartContext);
+
+  // product details
   const { productId } = useParams();
   const [productDetailsData, setProductDetailsData] = useState({});
   const url = `/api/products/${productId}`;
@@ -25,7 +26,16 @@ const ProductDetails = () => {
 
   const discount = price - sellingPrice;
 
+  // Cart Functions
+  const { cartData, addToCartHandler } = useContext(CartContext);
   const addedToCart = cartData.find(
+    ({ _id }) => _id === productDetailsData._id
+  );
+
+  // Wishlist Functions
+  const { data_Wishlist, addToWishlistHandler, removeWishlistProduct } =
+    useContext(WishlistContext);
+  const addedToWishlist = data_Wishlist.find(
     ({ _id }) => _id === productDetailsData._id
   );
 
@@ -43,29 +53,61 @@ const ProductDetails = () => {
         </div>
 
         <div className="productDetail-info">
-          <p>
-            <h1>{name}</h1>
+          <h1>{name}</h1>
+          <div className="productDetails-price-container">
             <h3 className="productDetail-price">
-              <small>₹{price}</small>{" "}₹{sellingPrice} 
+              <small>₹{price}</small> ₹{sellingPrice}
             </h3>
-          </p>
+            <p>
+              Flat <b className="discount">{discount}</b> off
+            </p>
+          </div>
+
           <p>
-            Flat : <b className="discount">{discount}</b> off
+            Ratings :{" "}
+            {Array(rating)
+              .fill()
+              .map((_, index) => (
+                <span key={index} className="product-rating">
+                  <i class="fa fa-star" aria-hidden="true"></i>
+                </span>
+              ))}
           </p>
-          <p>Rating : {rating}/5</p>
-          <button
-            className="detailsBtn"
-            onClick={() =>
-              addedToCart
-                ? navigate("/cart")
-                : addToCartHandler(productDetailsData)
-            }
-          >
-            <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
-            {addedToCart ? "Go to Cart" : "Add to Cart"}
-          </button>
+
+          {/* cart button */}
+          <div className="DetailBtn-container">
+            <button
+              className="DetailBtn"
+              onClick={() =>
+                addedToCart
+                  ? navigate("/cart")
+                  : addToCartHandler(productDetailsData)
+              }
+            >
+              <i class="fa fa-cart-plus" aria-hidden="true"></i>{" "}
+              {addedToCart ? "Go to cart" : "Add to cart"}
+            </button>
+
+            {/* wishlist button */}
+            <button
+              className="DetailBtn"
+              onClick={() =>
+                addedToWishlist
+                  ? removeWishlistProduct(productDetailsData)
+                  : addToWishlistHandler(productDetailsData)
+              }
+            >
+              <i class="fa fa-heart" aria-hidden="true"></i>{" "}
+              {addedToWishlist ? "Remove" : "Add"}
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* store button */}
+      <button className="productButton" onClick={() => navigate("/store")}>
+        Store
+      </button>
     </div>
   );
 };

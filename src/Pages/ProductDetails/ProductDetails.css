@@ -9,11 +9,10 @@
 .productDetail-container {
     max-width: 700px;
     display: flex;
+    justify-content: space-between;
     gap: 1rem;
   margin: 2rem auto;
   padding: 0.5rem;
-  box-shadow: 1px 1px 5px 3px gray;
-  background-color: var(--tertiary-color);
   border-radius: 0.5rem;
 }
 .productDetail-image{
@@ -27,10 +26,14 @@
     text-align: left;
 }
 .productDetail-info h1{
-    text-align: center;
     color: var(--primary-color);
+    border-bottom: 1px solid;
 }
 
+.productDetails-price-container{
+  display: flex;
+  justify-content: space-between;
+}
 .productDetail-price small{
     color: gray;
     text-decoration: line-through;
@@ -39,4 +42,26 @@
   color: darkcyan;
   font-style: italic;
   font-size: larger;
+}
+
+/* buttons */
+.DetailBtn-container{
+  display: flex;
+  gap: 1rem;
+}
+
+.DetailBtn{
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.DetailBtn:hover{
+  background-color: var(--complementary-color);
+  box-shadow: 1px 1px 4px 1px gray;
 }

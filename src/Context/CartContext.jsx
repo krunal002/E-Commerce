@@ -103,6 +103,7 @@ export const CartContextHandler = ({ children }) => {
     <CartContext.Provider
       value={{
         cartData,
+        setCartData,
         addToCartHandler,
         removeProduct,
         incrementQuant,
