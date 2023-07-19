@@ -25,7 +25,7 @@ export const categories = [
     pic:"https://www.rakuten.com/blog/wp-content/uploads/2016/08/how-to-shop-end-of-summer-sales-like-a-pro.jpg",
     categoryName: "women",
     description:
-      "Every woman deserves a little glamour in her life—and we can help you get it!",
+      "Every woman deserves a little glamour in her life and we can help you get it!",
   },
   
 ];

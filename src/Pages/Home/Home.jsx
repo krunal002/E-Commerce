@@ -20,7 +20,7 @@ const Home = () => {
       <Header />
 
       <div className="categoryContainer">
-        <h1>Get your Choice</h1>
+        <h1 className="home-heading">Get your Choice</h1>
 
         <div className="showCategory">
           {categoryData.map((category) => (
@@ -28,14 +28,19 @@ const Home = () => {
               className="categoryProductContainer"
               onClick={() => clickHandler(category.categoryName)}
             >
+              <img src={category.pic} alt="category" className="category-picture"/>
+              <div className="category-info">
               <h2>{category.categoryName}</h2>
               <p>{category.description}</p>
+              </div>
             </div>
           ))}
         </div>
 
         <div className="storeRoute" onClick={() => clickHandler("all")}>
-          <h2>Go to store</h2>
+        <h1 className="storeRoute-heading">Go to store</h1>
+          <img src="https://t3.ftcdn.net/jpg/03/20/68/66/360_F_320686681_Ur6vdYQgDC9WiijiVfxlRyQffxOgfeFz.jpg" alt="storePicture" />
+          
         </div>
 
         <div className="collectionContainer">
