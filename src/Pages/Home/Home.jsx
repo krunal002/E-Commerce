@@ -48,10 +48,10 @@ const Home = () => {
             className="collectionCategory"
             onClick={() => clickHandler("women")}
           >
-            wedding Sarree collection
+            Diwali collection
           </p>
           <p className="collectionCategory" onClick={() => clickHandler("men")}>
-            latest Kurta collection
+            Latest Raksha Bandhan collection
           </p>
         </div>
       </div>

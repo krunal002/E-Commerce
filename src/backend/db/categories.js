@@ -8,24 +8,25 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    pic:"https://i1.wp.com/nypost.com/wp-content/uploads/sites/2/2018/06/men-shopping-masculine.jpg?quality=90&strip=all&ssl=1",
-    categoryName: "men",
+    pic:"https://img.freepik.com/premium-photo/valentine-s-day-background-with-paper-heartsgenerative-ai_841229-1986.jpg",
+    categoryName: "love",
     description:
-      "Being perfectly well-dressed gives one a tranquillity that no religion can bestow.",
-  },
-  {
-    _id: uuid(),
-    pic:"https://tse4.mm.bing.net/th?id=OIP.0X0V7n6Rp-6mt2MK8_ZW-gHaE8&pid=Api&P=0&h=180",
-    categoryName: "kids",
-    description:
-      "Make your baby more unique with our best fabric and latest clothes designs."
-  },
-  {
-    _id: uuid(),
-    pic:"https://www.rakuten.com/blog/wp-content/uploads/2016/08/how-to-shop-end-of-summer-sales-like-a-pro.jpg",
-    categoryName: "women",
-    description:
-      "Every woman deserves a little glamour in her life and we can help you get it!",
+      "Love is a canvas furnished by nature and embroidered by imagination",
   },
   
+  {
+    _id: uuid(),
+    pic:"https://assets-news.housing.com/news/wp-content/uploads/2022/01/24192402/Vastu-tips-to-light-Diwali-diyas-shutterstock_474656347.jpg",
+    categoryName: "festival",
+    description:
+      "During festivals, let us set aside our differences and come together in the spirit of harmony",
+  },
+  
+  {
+    _id: uuid(),
+    pic:"https://stylesatlife.com/wp-content/uploads/2022/10/Simple-Colourful-Flower-Cake-Design.jpg",
+    categoryName: "birthday",
+    description:
+      "Beginning of a new chapter filled with love, happiness, and fulfillment in every aspect of life"
+  },
 ];

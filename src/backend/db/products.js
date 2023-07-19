@@ -6,160 +6,287 @@ import { v4 as uuid } from "uuid";
  **/
 
 export const products = [
+  // love
   {
     _id: uuid(),
-    name: "Classic Brown",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "men",
+    name: "Love Heart Design",
+    desc:"Your love has transformed my life in ways I never thought possible.",
+    category: "love",
     isStarred: false,
-    sellingPrice: 999,
-    price: 1999,
+    sellingPrice: 799,
+    price: 1499,
     delivery: 0,
-    rating: 3,
+    rating: 4,
     image:
-      "https://www.parivarceremony.com/media/catalog/product/cache/14a1553305c404c221b3f13f50c007dd/p/1/p1031mw37.jpg"
+      "https://rianshstore.com/cdn/shop/products/PNZ6MluGnt_560x700.jpg?v=1650608405"
   },
+  // festival
   {
     _id: uuid(),
-    name: "Floral Print",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "kids",
+    name: "Teacher's Day",
+    desc:"Your impact is immeasurable, leaving an indelible mark on our hearts and minds.",
+    category: "festival",
     isStarred: false,
     sellingPrice: 499,
+    price: 1299,
+    delivery: 30,
+    rating: 5,
+    image:
+      "https://images.template.net/106279/free-sample-teacher-s-day-card-template-smcvu.jpg"
+  },
+  // festival
+  {
+    _id: uuid(),
+    name: "Diwali Wishesh",
+    desc:"May we embrace the true spirit of Diwali by extending a helping hand and bringing smiles to the faces of others.",
+    category: "festival",
+    isStarred: false,
+    sellingPrice: 299,
+    price: 899,
+    delivery: 10,
+    rating: 3,
+    image:
+      "https://2323designs.in/cdn/shop/products/diwali-greetings-set-of-6-paper-cards-304760.jpg?v=1619447829"
+  },
+  // anniversary
+  {
+    _id: uuid(),
+    name: "Couple Greeting",
+    desc:"Today marks another year of love, commitment, and beautiful memories shared between two extraordinary souls.",
+    category: "anniversary",
+    isStarred: false,
+    sellingPrice: 699,
     price: 1229,
     delivery: 10,
     rating: 3,
     image:
-      "https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/17045988/2022/2/4/0d9dcffa-936e-4129-a098-e184862a1e9d1643958755775pspeachesMagentaFloralA-LineDress1.jpg"
+      "https://mrbrownbakery.com/image/images/mPnGXLMuOb14f6EXsFpFY2S7BcKg9oPGwffH3QSg.jpeg?p=full"
   },
+  // love
   {
     _id: uuid(),
-    name: "Poly Georgette",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "women",
+    name: "Valentine Special Card",
+    desc:" Together, we create a tapestry of love, woven with trust, respect, and unwavering commitment. ",
+    category: "love",
     isStarred: false,
-    sellingPrice: 569,
-    price: 1349,
-    delivery: 30,
-    rating: 5,
-    image:
-      "https://assets.ajio.com/medias/sys_master/root/20230518/Q6BR/64657e4b42f9e729d7951370/-473Wx593H-463086147-blue-MODEL.jpg"
-  },
-  {
-    _id: uuid(),
-    name: "Western Meta Blue",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "men",
-    isStarred: true,
-    sellingPrice: 449,
-    price: 1899,
-    delivery: 0,
-    rating: 4,
-    image:
-      "https://www.parivarceremony.com/media/catalog/product/cache/14a1553305c404c221b3f13f50c007dd/m/w/mw1036_6.jpg"
-  },
-  {
-    _id: uuid(),
-    name: "Denim teal",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "men",
-    isStarred: false,
-    sellingPrice: 999,
-    price: 2099,
+    sellingPrice: 99,
+    price: 299,
     delivery: 0,
     rating: 2,
     image:
-      "https://cdn.shopify.com/s/files/1/0047/7727/9617/products/1J8A1084-Copy_600x.jpg?v=1673346022"
+      "https://i.etsystatic.com/15314864/r/il/24729c/3625689556/il_570xN.3625689556_q2xf.jpg"
   },
+
+  // birthday
   {
     _id: uuid(),
-    name: "Casual Mix",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "kids",
+    name: "Casual Mix Card",
+    desc:"Each year is a new chapter, filled with opportunities for growth, love, and fulfillment.",
+    category: "birthday",
     isStarred: false,
-    sellingPrice: 799,
-    price: 1299,
+    sellingPrice: 199,
+    price: 299,
     delivery: 50,
     rating: 4,
     image:
-      "https://www.okboss.co.in/assets/img/home/boysrow1/kids%20musterd%20jacket%20with%20white%20tshirt%20party%20wear%20dress.jpg"
+      "https://cdn.diys.com/wp-content/uploads/2016/08/Paper-doily-cupcake-card.jpg"
   },
+  // festival
   {
     _id: uuid(),
-    name: "Rayon Anarkali",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "women",
-    isStarred: false,
-    sellingPrice: 669,
-    price: 1349,
-    delivery: 20,
-    rating: 3,
-    image:
-      "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7723403/2018/11/12/b6938891-c168-444c-ab87-2ee2230af79f1542013784945-Nayo-Women-Dresses-5761542013784748-1.jpg"
-  },
-  {
-    _id: uuid(),
-    name: "Denim Dress",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "kids",
-    isStarred: false,
-    sellingPrice: 899,
-    price: 1949,
-    delivery: 0,
-    rating: 5,
-    image:
-      "https://assets0.mirraw.com/images/11323760/Foil_Wine_Gown_Front_COLOR_large_m.jpg?1678951122"
-  },
-  {
-    _id: uuid(),
-    name: "Fit & Flare",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "women",
-    isStarred: false,
-    sellingPrice: 499,
-    price: 1229,
-    delivery: 20,
-    rating: 3,
-    image:
-      "https://img3.junaroad.com/uiproducts/19701690/pri_175_p-1681281932.jpg"
-  },
-  {
-    _id: uuid(),
-    name: "Hooded Tracksuit",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "kids",
-    isStarred: false,
-    sellingPrice: 599,
-    price: 1229,
-    delivery: 0,
-    rating: 3,
-    image:
-      "https://cdn.shopify.com/s/files/1/0253/9628/1399/products/boy-hooded-tracksuit-clothes-set-kids-clothing-sets-4-6-8-10-12-14-year-red-4t-kids-586.jpg?v=1637546205&width=1445"
-  },
-  {
-    _id: uuid(),
-    name: "Italian Fabric",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "men",
-    isStarred: false,
-    sellingPrice: 999,
-    price: 1299,
-    delivery: 30,
-    rating: 3,
-    image:
-      "https://5.imimg.com/data5/NM/FT/TI/ANDROID-77896561/product-jpeg-500x500.jpg"
-  },
-  {
-    _id: uuid(),
-    name: "Skirt Midi",
-    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
-    category: "women",
+    name: "Merry X-mas",
+    desc:"As the magical spirit of Christmas fills the air, I send my warmest wishes for a joyous and enchanting holiday season.",
+    category: "festival",
     isStarred: false,
     sellingPrice: 799,
     price: 899,
     delivery: 10,
     rating: 3,
     image:
-      "https://www.lulus.com/images/product/xlarge/8678381_1788456.jpg?w=195&hdpi=1"
-  }
+      "https://m.media-amazon.com/images/I/81O0tOA0-zL._AC_UF894,1000_QL80_.jpg"
+  },
+  
+  // festival
+  {
+    _id: uuid(),
+    name: "Celebrate Colours",
+    desc:"Indulge in delicious sweets and delicacies, sharing laughter and stories that create everlasting memories.",
+    category: "festival",
+    isStarred: false,
+    sellingPrice: 499,
+    price: 899,
+    delivery: 10,
+    rating: 3,
+    image:
+      "https://images.meesho.com/images/products/73705812/ociry_512.webp"
+  },
+  
+  // birthday
+  {
+    _id: uuid(),
+    name: "Mom's Special",
+    desc:"You have a remarkable ability to make everyone around you feel loved and cherished.",
+    category: "birthday",
+    isStarred: false,
+    sellingPrice: 149,
+    price: 349,
+    delivery: 20,
+    rating: 3,
+    image:
+      "https://images-cdn.ubuy.co.in/633fedbc4bdfa04f9a5b10e6-hallmark-birthday-greeting-card-for-mom.jpg"
+  },
+  // festival
+  {
+    _id: uuid(),
+    name: "favorite Teacher",
+    desc:"I want to express my deepest gratitude for your unwavering dedication and commitment to nurturing young minds.",
+    category: "festival",
+    isStarred: false,
+    sellingPrice: 399,
+    price: 899,
+    delivery: 10,
+    rating: 3,
+    image:
+      "https://img.freepik.com/free-vector/hand-drawn-flat-teachers-day-vertical-poster-template_23-2149064463.jpg?w=2000"
+  },
+  // anniversary
+  {
+    _id: uuid(),
+    name: "Dedicated Couple",
+    desc:"In each passing year, your love deepens and grows, like a well-nurtured garden blossoming into a breathtaking oasis. ",
+    category: "anniversary",
+    isStarred: false,
+    sellingPrice: 99,
+    price: 199,
+    delivery: 10,
+    rating: 3,
+    image:
+      "https://i.pinimg.com/236x/33/44/30/334430377cf4c4746e222adc53df684b--marriage-anniversary-happy-anniversary.jpg"
+  },
+  // birthday
+  {
+    _id: uuid(),
+    name: "Kids cafted",
+    desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
+    category: "birthday",
+    isStarred: false,
+    sellingPrice: 299,
+    price: 949,
+    delivery: 0,
+    rating: 3,
+    image:
+      "https://i1.wp.com/www.skiptomylou.org/wp-content/uploads/2014/08/Kids-birthday-card-craft-ideas-1.jpg"
+  },
+  // festival
+  {
+    _id: uuid(),
+    name: "Diwali Card",
+    desc:"May the aroma of festive sweets and delicacies fill the air, creating memories that will be cherished for years to come.",
+    category: "festival",
+    isStarred: false,
+    sellingPrice: 149,
+    price: 899,
+    delivery: 10,
+    rating: 5,
+    image:
+      "https://i.pinimg.com/originals/3a/b7/a0/3ab7a023dbddcb4fbbb9c1bdbe0e4eca.png"
+  },
+  // anniversary
+  {
+    _id: uuid(),
+    name: "Tilted Heart",
+    desc:"Your relationship is a true inspiration, a shining example of what love and dedication can achieve.",
+    category: "anniversary",
+    isStarred: false,
+    sellingPrice: 99,
+    price: 229,
+    delivery: 0,
+    rating: 3,
+    image:
+      "https://m.media-amazon.com/images/I/71c+GMs-rFL.jpg"
+  },
+  // love
+  {
+    _id: uuid(),
+    name: "Full of Love",
+    desc:"I am endlessly grateful for the way you understand me, accepting every aspect of who I am. ",
+    category: "love",
+    isStarred: true,
+    sellingPrice: 449,
+    price: 1899,
+    delivery: 0,
+    rating: 4,
+    image:
+      "https://i.pinimg.com/originals/2e/f6/25/2ef62511d8fb4139928ea3dfa9442ad6.png"
+  },
+  // festival
+  {
+    _id: uuid(),
+    name: "Teacher Special",
+    desc:"I want to express my deepest gratitude for your unwavering dedication and commitment to nurturing young minds.",
+    category: "festival",
+    isStarred: false,
+    sellingPrice: 799,
+    price: 899,
+    delivery: 10,
+    rating: 5,
+    image:
+      "https://i0.wp.com/naetaze.com/wp-content/uploads/2021/09/0001-8646667899_20210925_222327_0000.jpg?resize=576%2C1024&ssl=1"
+  },
+  // festival
+  {
+    _id: uuid(),
+    name: "Celebrate Colours",
+    desc:"Indulge in delicious sweets and delicacies, sharing laughter and stories that create everlasting memories.",
+    category: "festival",
+    isStarred: false,
+    sellingPrice: 699,
+    price: 899,
+    delivery: 10,
+    rating: 3,
+    image:
+      "https://m.media-amazon.com/images/I/61qGv4IypxL._AC_UF1000,1000_QL80_.jpg"
+  },
+  // festival
+  {
+    _id: uuid(),
+    name: "Diwali Special",
+    desc:"May Diwali bring happiness, prosperity, and boundless joy into your lives.",
+    category: "festival",
+    isStarred: false,
+    sellingPrice: 299,
+    price: 899,
+    delivery: 10,
+    rating: 4,
+    image:
+      "https://static.vecteezy.com/system/resources/previews/003/353/816/original/diwali-day-festivity-with-mandala-free-vector.jpg"
+  },
+  // love
+  {
+    _id: uuid(),
+    name: "Paper Cut Love Card",
+    desc:"Our love transcends time and space, connecting us on a profound level that words cannot fully capture.",
+    category: "love",
+    isStarred: false,
+    sellingPrice: 499,
+    price: 1229,
+    delivery: 20,
+    rating: 3,
+    image:
+      "https://i.etsystatic.com/8576830/r/il/76842c/1136141946/il_fullxfull.1136141946_1bjd.jpg"
+  },
+  // birthday
+  {
+    _id: uuid(),
+    name: "Handmade Craft",
+    desc:"On this special day, the world celebrates the day you graced us with your presence.",
+    category: "birthday",
+    isStarred: false,
+    sellingPrice: 569,
+    price: 1349,
+    delivery: 30,
+    rating: 2,
+    image:
+      "https://i.etsystatic.com/13779862/r/il/bb531d/1274922501/il_570xN.1274922501_rryt.jpg"
+  },
 ];

@@ -42,7 +42,7 @@ const ProductDetails = () => {
   return (
     <div>
       <Header />
-
+          
       <div key={_id} className="productDetail-container">
         <div className="productDetail-image-container">
           <img
@@ -54,6 +54,7 @@ const ProductDetails = () => {
 
         <div className="productDetail-info">
           <h1>{name}</h1>
+          <div className="card-name">{productDetailsData.category} Card</div>
           <p className="description">{desc}</p>
           <div className="productDetails-price-container">
             <h3 className="productDetail-price">

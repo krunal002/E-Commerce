@@ -6,12 +6,19 @@
   --tertiary-color: #ffe4e6;
 }
 
+.card-name{
+  color: var(--complementary-color);
+}
+.card-name::first-letter{
+text-transform: capitalize;
+}
+
 .productDetail-container {
     max-width: 700px;
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
@@ -19,6 +26,7 @@
     border-radius: 0.5rem;
     width: 18rem;
     height: 26rem;
+    box-shadow: 1px 1px 5px 1px gray;
 }
 
 /* Information */
