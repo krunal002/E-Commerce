@@ -38,7 +38,7 @@ const Home = () => {
         </div>
 
         <div className="storeRoute" onClick={() => clickHandler("all")}>
-        <h1 className="storeRoute-heading">Go to store</h1>
+          <h1 className="storeRoute-heading">Go to store</h1>
           <img src="https://t3.ftcdn.net/jpg/03/20/68/66/360_F_320686681_Ur6vdYQgDC9WiijiVfxlRyQffxOgfeFz.jpg" alt="storePicture" />
           
         </div>
