@@ -1,0 +1,32 @@
+:root {
+    --background-color: #fff1f2;
+    --primary-color: #881337;
+    --complementary-color: #e11d48;
+    --secondary-color: #fb7185;
+    --tertiary-color: #ffe4e6;
+  }
+
+.search-container{
+    text-align: left;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.search-icon{
+    background-color: var(--tertiary-color);
+    color: gray;
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+}
+.search-icon input{
+    background-color: var(--tertiary-color);
+    padding: 1rem;
+    border: none;
+    width: 90%;
+    border-radius: 5px;
+}
+.search-icon input:focus{
+    outline: none;
+}

@@ -2,6 +2,7 @@ import Cart from "./Pages/Cart/Cart";
 import Home from "./Pages/Home/Home";
 import LoginPage from "./Pages/Login/LoginPage";
 import Store from "./Pages/Store/Store";
+import Search from "./Pages/Search/Search";
 import Wishlist from "./Pages/Wishlist/Wishlist";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import UserProfile from "./Pages/Profile/UserProfile"
@@ -55,6 +56,7 @@ const ECommerse = () => {
         />
         
         <Route path="/store" element={<Store />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/details/:productId" element={<ProductDetails />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUp />} />

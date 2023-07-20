@@ -275,7 +275,7 @@ export const products = [
     sellingPrice: 299,
     price: 899,
     delivery: 10,
-    rating: 4,
+    rating: 3,
     image:
       "https://static.vecteezy.com/system/resources/previews/003/353/816/original/diwali-day-festivity-with-mandala-free-vector.jpg"
   },
