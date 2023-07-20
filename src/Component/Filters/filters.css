@@ -1,4 +1,20 @@
+:root {
+  --background-color: #fff1f2;
+  --primary-color: #881337;
+  --complementary-color: #e11d48;
+  --secondary-color: #fb7185;
+  --tertiary-color: #ffe4e6;
+}
+
+/* Filter Container */
+.filter-container{
+  background-color: var(--tertiary-color);
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
 .filterHeader {
+  color: gray;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -7,7 +23,29 @@
 
 .heading {
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin: 1rem;
+  color: gray;
+}
+
+/* Clear Button */
+.clear-button{
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  cursor: pointer;
+}
+.clear-button:hover{
+  box-shadow: 1px 1px 3px 1px gray;
+}
+
+/* individual container */
+.fil-container{
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
 }
 
 /* Price Range */

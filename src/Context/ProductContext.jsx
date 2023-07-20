@@ -10,17 +10,13 @@ export const ProductContextHandler = ({ children }) => {
       case "productSearch":
         return { ...state, productSearch: action.payload };
       case "price":
-        return {
-          ...state,
-          priceFilterValue: action.payload,
-          productSearch: "",
-        };
+        return { ...state, priceFilterValue: action.payload };
       case "category":
-        return { ...state, categoryFilter: action.payload, productSearch: "" };
+        return { ...state, categoryFilter: action.payload };
       case "rating":
-        return { ...state, ratingFilter: action.payload, productSearch: "" };
+        return { ...state, ratingFilter: action.payload };
       case "sort":
-        return { ...state, sortPrice: action.payload, productSearch: "" };
+        return { ...state, sortPrice: action.payload };
       case "clear":
         return {
           ...state,
@@ -47,7 +43,6 @@ export const ProductContextHandler = ({ children }) => {
     try {
       const response = await fetch("/api/products");
       const data = await response.json();
-      // console.log(data.products)
       setTempData(data.products);
     } catch (e) {
       console.log(e);
@@ -92,7 +87,6 @@ export const ProductContextHandler = ({ children }) => {
 
   const productData = searchItems;
 
-  
   return (
     <div>
       <ProductContext.Provider

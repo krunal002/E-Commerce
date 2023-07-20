@@ -14,7 +14,7 @@
 .leftContainer {
   text-align: left;
   flex: 20%;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .rightContainer {
