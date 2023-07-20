@@ -1,12 +1,25 @@
 import "./ProductDetails.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Header from "../../Component/Header/Header";
 import { CartContext, WishlistContext } from "../../E-Commerse";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
+  const notifyOOS = () =>
+    toast.error("Out Of Stock!", {
+      position: "bottom-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
 
   // product details
   const { productId } = useParams();
@@ -22,7 +35,8 @@ const ProductDetails = () => {
     getProductDetails();
   });
 
-  const { _id, name, desc, image, sellingPrice, rating, price } = productDetailsData;
+  const { _id, name, desc, image, sellingPrice, rating, price } =
+    productDetailsData;
 
   const discount = price - sellingPrice;
 
@@ -39,10 +53,22 @@ const ProductDetails = () => {
     ({ _id }) => _id === productDetailsData._id
   );
 
+  // Color
+  const color =
+    productDetailsData.status === "Best Seller"
+      ? "#2eb8b8"
+      : productDetailsData.status === "Out of Stock"
+      ? "#e60000"
+      : productDetailsData.status === "Trendy"
+      ? "#4d94ff"
+      : productDetailsData.status === "Available"
+      ? "#00e600"
+      : "#ffd633";
+
   return (
     <div>
       <Header />
-          
+      <ToastContainer />
       <div key={_id} className="productDetail-container">
         <div className="productDetail-image-container">
           <img
@@ -54,11 +80,18 @@ const ProductDetails = () => {
 
         <div className="productDetail-info">
           <h1>{name}</h1>
-          <div className="card-name">{productDetailsData.category} Card</div>
+          {/* Additional info */}
+          <div className="add-info">
+            <div className="card-name">{productDetailsData.category} Card</div>
+            <div className="status" style={{ backgroundColor: color }}>
+              {productDetailsData.status}
+            </div>
+          </div>
+
           <p className="description">{desc}</p>
           <div className="productDetails-price-container">
             <h3 className="productDetail-price">
-              <small>₹{price}</small> ₹{sellingPrice}
+              <small>MRP {price}</small> ₹{sellingPrice}
             </h3>
             <p>
               Flat <b className="discount">{discount}</b> off
@@ -80,8 +113,11 @@ const ProductDetails = () => {
           <div className="DetailBtn-container">
             <button
               className="DetailBtn"
+              // disabled={productDetailsData.status==="Out of Stock"}
               onClick={() =>
-                addedToCart
+                productDetailsData.status === "Out of Stock"
+                  ? notifyOOS()
+                  : addedToCart
                   ? navigate("/cart")
                   : addToCartHandler(productDetailsData)
               }
@@ -107,7 +143,11 @@ const ProductDetails = () => {
       </div>
 
       {/* store button */}
-      <button className="productButton" onClick={() => navigate("/store")} style={{backgroundColor:"lightgray", color:"black"}}>
+      <button
+        className="productButton"
+        onClick={() => navigate("/store")}
+        style={{ backgroundColor: "lightgray", color: "black" }}
+      >
         Store
       </button>
     </div>

@@ -6,11 +6,23 @@
   --tertiary-color: #ffe4e6;
 }
 
+/* Additional info */
+.add-info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .card-name{
   color: var(--complementary-color);
 }
 .card-name::first-letter{
 text-transform: capitalize;
+}
+.status{
+  font-weight: bolder;
+  padding: 0.3rem 1rem;
+  border-radius: 5px;
+  color: var(--background-color);
 }
 
 .productDetail-container {

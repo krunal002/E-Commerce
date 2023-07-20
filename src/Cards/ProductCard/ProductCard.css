@@ -47,6 +47,37 @@
   right: 0;
   cursor: pointer;
 }
+.bestSeller{
+  position: absolute;
+  padding: 2px;
+  top: 10px;
+  left: -2px;
+  background-color: #2eb8b8;
+  border-radius: 2px;
+  color: white;
+  font-size: small;
+}
+.trendy{
+  position: absolute;
+  padding: 2px;
+  bottom: 10px;
+  left: -2px;
+  background-color: #4d94ff;
+  border-radius: 2px;
+  color: white;
+  font-size: small;
+}
+.outOfStock{
+  position: absolute;
+  padding: 2px;
+  bottom: 10px;
+  left: -2px;
+  background-color: #e60000;
+  border-radius: 2px;
+  color: white;
+  font-size: small;
+}
+
 .productImage {
   width: 12rem;
   height: 16rem;

@@ -9,6 +9,7 @@ export const products = [
   // love
   {
     _id: uuid(),
+    status:"Best Seller",
     name: "Love Heart Design",
     desc:"Your love has transformed my life in ways I never thought possible.",
     category: "love",
@@ -23,6 +24,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Trendy",
     name: "Teacher's Day",
     desc:"Your impact is immeasurable, leaving an indelible mark on our hearts and minds.",
     category: "festival",
@@ -37,6 +39,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Available",
     name: "Diwali Wishesh",
     desc:"May we embrace the true spirit of Diwali by extending a helping hand and bringing smiles to the faces of others.",
     category: "festival",
@@ -51,6 +54,7 @@ export const products = [
   // anniversary
   {
     _id: uuid(),
+    status:"Best Seller",
     name: "Couple Greeting",
     desc:"Today marks another year of love, commitment, and beautiful memories shared between two extraordinary souls.",
     category: "anniversary",
@@ -65,6 +69,7 @@ export const products = [
   // love
   {
     _id: uuid(),
+    status:"Trendy",
     name: "Valentine Special Card",
     desc:" Together, we create a tapestry of love, woven with trust, respect, and unwavering commitment. ",
     category: "love",
@@ -80,6 +85,7 @@ export const products = [
   // birthday
   {
     _id: uuid(),
+    status:"Out of Stock",
     name: "Casual Mix Card",
     desc:"Each year is a new chapter, filled with opportunities for growth, love, and fulfillment.",
     category: "birthday",
@@ -94,6 +100,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Few Left",
     name: "Merry X-mas",
     desc:"As the magical spirit of Christmas fills the air, I send my warmest wishes for a joyous and enchanting holiday season.",
     category: "festival",
@@ -109,6 +116,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Trendy",
     name: "Celebrate Colours",
     desc:"Indulge in delicious sweets and delicacies, sharing laughter and stories that create everlasting memories.",
     category: "festival",
@@ -124,6 +132,7 @@ export const products = [
   // birthday
   {
     _id: uuid(),
+    status:"Best Seller",
     name: "Mom's Special",
     desc:"You have a remarkable ability to make everyone around you feel loved and cherished.",
     category: "birthday",
@@ -138,6 +147,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Few Left",
     name: "favorite Teacher",
     desc:"I want to express my deepest gratitude for your unwavering dedication and commitment to nurturing young minds.",
     category: "festival",
@@ -152,6 +162,7 @@ export const products = [
   // anniversary
   {
     _id: uuid(),
+    status:"Out of Stock",
     name: "Dedicated Couple",
     desc:"In each passing year, your love deepens and grows, like a well-nurtured garden blossoming into a breathtaking oasis. ",
     category: "anniversary",
@@ -166,6 +177,7 @@ export const products = [
   // birthday
   {
     _id: uuid(),
+    status:"Trendy",
     name: "Kids cafted",
     desc:"A colorful bouquet of blooming flowers, vibrant and lively, catches your attention.",
     category: "birthday",
@@ -180,6 +192,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Best Seller",
     name: "Diwali Card",
     desc:"May the aroma of festive sweets and delicacies fill the air, creating memories that will be cherished for years to come.",
     category: "festival",
@@ -194,6 +207,7 @@ export const products = [
   // anniversary
   {
     _id: uuid(),
+    status:"Few Left",
     name: "Tilted Heart",
     desc:"Your relationship is a true inspiration, a shining example of what love and dedication can achieve.",
     category: "anniversary",
@@ -208,6 +222,7 @@ export const products = [
   // love
   {
     _id: uuid(),
+    status:"Out of Stock",
     name: "Full of Love",
     desc:"I am endlessly grateful for the way you understand me, accepting every aspect of who I am. ",
     category: "love",
@@ -222,6 +237,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Best Seller",
     name: "Teacher Special",
     desc:"I want to express my deepest gratitude for your unwavering dedication and commitment to nurturing young minds.",
     category: "festival",
@@ -236,6 +252,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Trendy",
     name: "Celebrate Colours",
     desc:"Indulge in delicious sweets and delicacies, sharing laughter and stories that create everlasting memories.",
     category: "festival",
@@ -250,6 +267,7 @@ export const products = [
   // festival
   {
     _id: uuid(),
+    status:"Few Left",
     name: "Diwali Special",
     desc:"May Diwali bring happiness, prosperity, and boundless joy into your lives.",
     category: "festival",
@@ -264,6 +282,7 @@ export const products = [
   // love
   {
     _id: uuid(),
+    status:"Best Seller",
     name: "Paper Cut Love Card",
     desc:"Our love transcends time and space, connecting us on a profound level that words cannot fully capture.",
     category: "love",
@@ -278,6 +297,7 @@ export const products = [
   // birthday
   {
     _id: uuid(),
+    status:"Out of Stock",
     name: "Handmade Craft",
     desc:"On this special day, the world celebrates the day you graced us with your presence.",
     category: "birthday",
@@ -287,6 +307,6 @@ export const products = [
     delivery: 30,
     rating: 2,
     image:
-      "https://i.etsystatic.com/13779862/r/il/bb531d/1274922501/il_570xN.1274922501_rryt.jpg"
+      "https://flowerportal.in/wp-content/uploads/2021/09/Birthday-Greeting-Card.jpg"
   },
 ];
