@@ -22,8 +22,9 @@
 }
 
 .heading {
-  font-weight: bold;
-  margin: 1rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-weight: bold; */
+  margin: 0.5rem 0;
   color: gray;
 }
 

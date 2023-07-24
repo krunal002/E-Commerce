@@ -15,14 +15,14 @@ const Filters = () => {
             className="clear-button"
             onClick={(e) => dispatch({ type: "clear" })}
           >
-            Clear
+            CLEAR
           </button>
         </div>
       </div>
 
       {/* priceRange */}
       <div className="priceRange fil-container">
-        <div className="heading">Price</div>
+        <div className="heading">PRICE RANGE</div>
         <input
           type="range"
           className="input"
@@ -42,7 +42,7 @@ const Filters = () => {
 
       {/* categoryFilter */}
       <div className="categoryFilter fil-container">
-        <div className="heading">Category</div>
+        <div className="heading">CATEGORY</div>
         <div>
           <input
             type="radio"
@@ -103,7 +103,7 @@ const Filters = () => {
 
       {/* ratingFilter */}
       <div className="ratingFilter fil-container">
-        <div className="heading">Rating</div>
+        <div className="heading">RATINGS</div>
         <div>
           <input
             type="radio"
@@ -180,7 +180,7 @@ const Filters = () => {
 
       {/* priceSort */}
       <div className="priceSort fil-container">
-        <div className="heading">Sort by price</div>
+        <div className="heading">PRICE</div>
         <div>
           <input
             type="radio"

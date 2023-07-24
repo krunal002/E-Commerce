@@ -1,94 +1,94 @@
 :root {
-    --background-color: #fff1f2;
-    --primary-color: #881337;
-    --complementary-color: #e11d48;
-    --secondary-color: #fb7185;
-    --tertiary-color: #ffe4e6;
-  }
-
-.categoryContainer{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding: 1rem 2rem;
-    max-width: 70%;
-    background-color: var(--tertiary-color);
-    border-radius: 0.5rem;
-}
-.categoryContainer h1{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--background-color);
-    text-shadow: 2px 3px 5px var(--primary-color);
+  --background-color: #fff1f2;
+  --primary-color: #881337;
+  --complementary-color: #e11d48;
+  --secondary-color: #fb7185;
+  --tertiary-color: #ffe4e6;
 }
 
-.showCategory{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 2rem;
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 1rem 2rem;
+  max-width: 70%;
+  background-color: var(--tertiary-color);
+  border-radius: 0.5rem;
+}
+.categoryContainer h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: var(--background-color);
+  text-shadow: 2px 3px 5px var(--primary-color);
 }
 
-.categoryProductContainer{
-    position: relative;
-    background-color: transparent;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    box-shadow: 1px 1px 4px 2px gray;
-    text-shadow: 2px 2px 5px 4px;
-}
-.categoryProductContainer:hover{
-    box-shadow: 2px 2px 6px 2px gray;
+.showCategory {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 2rem;
 }
 
-.category-picture{
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    border-radius: 0.5rem;
+.categoryProductContainer {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px 2px gray;
+  text-shadow: 2px 2px 5px 4px;
 }
-.category-info{
-    position: absolute;
-    bottom: 0;
-    text-shadow: 2px 2px 5px var(--secondary-color);
-}
-.category-info h2{
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-color: var(--background-color);
-font-size: xx-large;
-}
-.category-info h2::first-letter{
-    text-transform: capitalize;
+.categoryProductContainer:hover {
+  box-shadow: 2px 2px 6px 2px gray;
 }
 
-.storeRoute{
-    position: relative;
-    margin: 3rem 0;
-    cursor: pointer;
+.category-picture {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  border-radius: 0.5rem;
 }
-.storeRoute img{
-    width: 100%;
-    height: 90%;
-    border-radius: 0.5rem;
-    box-shadow: 2px 2px 5px 3px gray;
+.category-info {
+  position: absolute;
+  bottom: 0;
+  text-shadow: 2px 2px 5px var(--secondary-color);
 }
-.storeRoute-heading{
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    font-size: 5rem;
+.category-info h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: var(--background-color);
+  font-size: xx-large;
+}
+.category-info h2::first-letter {
+  text-transform: capitalize;
 }
 
-.collectionContainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1rem;
+.storeRoute {
+  position: relative;
+  margin: 3rem 0;
+  cursor: pointer;
 }
-.collectionCategory{
-    background-color: var(--secondary-color);
-    box-shadow: 1px 1px 4px 2px gray;
-    color: var(--background-color);
-    border-radius: 0.5rem;
-    font-size: large;
-    padding: 2rem 0;
-    cursor: pointer;
+.storeRoute img {
+  width: 100%;
+  height: 90%;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 5px 3px gray;
+}
+.storeRoute-heading {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  font-size: 5rem;
+}
+
+.collectionContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1rem;
+}
+.collectionCategory {
+  background-color: var(--secondary-color);
+  box-shadow: 1px 1px 4px 2px gray;
+  color: var(--background-color);
+  border-radius: 0.5rem;
+  font-size: large;
+  padding: 2rem 0;
+  cursor: pointer;
 }
