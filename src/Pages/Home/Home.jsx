@@ -47,10 +47,11 @@ const Home = () => {
           <p
             className="collectionCategory"
             onClick={() => clickHandler("women")}
+            style={{backgroundImage:"url(https://static.vecteezy.com/system/resources/previews/000/678/669/original/simple-happy-diwali-greeting-with-diya.jpg)"}}
           >
             Diwali collection
           </p>
-          <p className="collectionCategory" onClick={() => clickHandler("men")}>
+          <p className="collectionCategory" onClick={() => clickHandler("men")} style={{backgroundImage:"url(https://img.freepik.com/free-vector/raksha-bandhan-indian-festival-brother-sister-banner-background_1035-24199.jpg)"}}> 
             Latest Raksha Bandhan collection
           </p>
         </div>

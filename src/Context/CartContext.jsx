@@ -2,9 +2,13 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 export const CartContext = createContext();
 
 export const CartContextHandler = ({ children }) => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("encodedToken");
+  console.log(token);
   const notify_cart = () =>
     toast.success("Added to Cart!", {
       position: "bottom-right",
@@ -33,14 +37,18 @@ export const CartContextHandler = ({ children }) => {
 
   const addToCartHandler = async (product) => {
     try {
-      const res = await fetch("/api/user/cart", {
-        method: "POST",
-        headers: { authorization: encodedToken },
-        body: JSON.stringify({ product: product }),
-      });
-      const result = await res.json();
-      setCartData(result.cart);
-      notify_cart();
+      if (!token) {
+        navigate("/login");
+      } else {
+        const res = await fetch("/api/user/cart", {
+          method: "POST",
+          headers: { authorization: encodedToken },
+          body: JSON.stringify({ product: product }),
+        });
+        const result = await res.json();
+        setCartData(result.cart);
+        notify_cart();
+      }
     } catch (e) {
       console.log(e);
     }

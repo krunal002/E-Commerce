@@ -7,7 +7,7 @@
 }
 
 /* Filter Container */
-.filter-container{
+.filter-container {
   background-color: var(--tertiary-color);
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
@@ -22,14 +22,14 @@
 }
 
 .heading {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   /* font-weight: bold; */
   margin: 0.5rem 0;
   color: gray;
 }
 
 /* Clear Button */
-.clear-button{
+.clear-button {
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
@@ -37,16 +37,21 @@
   color: var(--background-color);
   cursor: pointer;
 }
-.clear-button:hover{
+.clear-button:hover {
   box-shadow: 1px 1px 3px 1px gray;
 }
 
 /* individual container */
-.fil-container{
+.fil-container {
   margin: 0.5rem 0;
   padding: 0.5rem;
   background-color: var(--background-color);
   border-radius: 0.5rem;
+}
+.fil-container:hover {
+  -webkit-transform: scale(1);
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px 0 rgba(58, 53, 65, 0.1);
 }
 
 /* Price Range */
