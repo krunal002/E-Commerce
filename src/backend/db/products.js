@@ -49,7 +49,7 @@ export const products = [
     delivery: 10,
     rating: 3,
     image:
-      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F204%2F952%2Foriginal%2Fvector-diwali-festival-greeting-with-diya-and-paisley-decoration-design.jpg&f=1&nofb=1&ipt=477593fc1be2ecdbdbf584fa0e4b1a7450848a33179794aa59255d9c6ed31f94&ipo=images"
+      "https://www.oneindia.com/diwali-greetings/images/greeting-04.jpg"
   },
   // anniversary
   {
