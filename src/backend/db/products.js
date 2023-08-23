@@ -49,7 +49,7 @@ export const products = [
     delivery: 10,
     rating: 3,
     image:
-      "https://2323designs.in/cdn/shop/products/diwali-greetings-set-of-6-paper-cards-304760.jpg?v=1619447829"
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F204%2F952%2Foriginal%2Fvector-diwali-festival-greeting-with-diya-and-paisley-decoration-design.jpg&f=1&nofb=1&ipt=477593fc1be2ecdbdbf584fa0e4b1a7450848a33179794aa59255d9c6ed31f94&ipo=images"
   },
   // anniversary
   {
