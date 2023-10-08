@@ -11,6 +11,8 @@
   background-color: var(--tertiary-color);
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
+  /* height */
+  height: 80vh;
 }
 
 .filterHeader {

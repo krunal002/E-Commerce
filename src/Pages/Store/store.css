@@ -30,3 +30,15 @@
   background-color: var(--background-color);
   border-radius: 5px;
 }
+
+/* scrollbar */
+.rightContainer{
+  height: 80vh;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--tertiary-color);
+  border-radius: 0.5rem;
+}
