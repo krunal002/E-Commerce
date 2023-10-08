@@ -12,9 +12,10 @@ const Store = () => {
   const { productData } = useContext(ProductContext);
 
   return (
-    <div>
+    <div className="app-container">
       <ToastContainer />
-      <Header />
+      <div className="app-header-container">
+      <Header /></div>
 
       <div className="container">
         <div className="leftContainer">
