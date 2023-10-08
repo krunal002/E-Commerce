@@ -49,7 +49,7 @@ export const products = [
     delivery: 10,
     rating: 3,
     image:
-      "https://2323designs.in/cdn/shop/products/diwali-greetings-set-of-6-paper-cards-304760.jpg?v=1619447829"
+      "https://www.oneindia.com/diwali-greetings/images/greeting-04.jpg"
   },
   // anniversary
   {
