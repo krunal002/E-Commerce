@@ -1,24 +1,16 @@
-:root {
-  --background-color: #fff1f2;
-  --primary-color: #881337;
-  --complementary-color: #e11d48;
-  --secondary-color: #fb7185;
-  --tertiary-color: #ffe4e6;
-}
-
 /* Additional info */
-.add-info{
+.add-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.card-name{
+.card-name {
   color: var(--complementary-color);
 }
-.card-name::first-letter{
-text-transform: capitalize;
+.card-name::first-letter {
+  text-transform: capitalize;
 }
-.status{
+.status {
   font-weight: bolder;
   padding: 0.3rem 1rem;
   border-radius: 5px;
@@ -26,39 +18,39 @@ text-transform: capitalize;
 }
 
 .productDetail-container {
-    max-width: 700px;
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+  max-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
   margin: 1rem auto;
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
-.productDetail-image{
-    border-radius: 0.5rem;
-    width: 18rem;
-    height: 26rem;
-    box-shadow: 1px 1px 5px 1px gray;
+.productDetail-image {
+  border-radius: 0.5rem;
+  width: 18rem;
+  height: 26rem;
+  box-shadow: 1px 1px 5px 1px gray;
 }
 
 /* Information */
-.productDetail-info{
-    text-align: left;
+.productDetail-info {
+  text-align: left;
 }
-.productDetail-info h1{
-    color: var(--primary-color);
-    border-bottom: 1px solid;
+.productDetail-info h1 {
+  color: var(--primary-color);
+  border-bottom: 1px solid;
 }
-.productDetail-info .description{
+.productDetail-info .description {
   width: 300px;
 }
-.productDetails-price-container{
+.productDetails-price-container {
   display: flex;
   justify-content: space-between;
 }
-.productDetail-price small{
-    color: gray;
-    text-decoration: line-through;
+.productDetail-price small {
+  color: gray;
+  text-decoration: line-through;
 }
 .discount {
   color: darkcyan;
@@ -67,12 +59,12 @@ text-transform: capitalize;
 }
 
 /* buttons */
-.DetailBtn-container{
+.DetailBtn-container {
   display: flex;
   gap: 1rem;
 }
 
-.DetailBtn{
+.DetailBtn {
   margin: 0.5rem 0;
   padding: 0.5rem 1rem;
   width: 8rem;
@@ -83,7 +75,19 @@ text-transform: capitalize;
   cursor: pointer;
 }
 
-.DetailBtn:hover{
+.DetailBtn:hover {
   background-color: var(--complementary-color);
   box-shadow: 1px 1px 4px 1px gray;
+}
+
+@media (max-width: 600px) {
+  .productDetail-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .productDetail-info {
+    width: 80%;
+    margin: auto;
+  }
 }
