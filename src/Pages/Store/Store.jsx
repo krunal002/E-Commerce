@@ -15,7 +15,8 @@ const Store = () => {
     <div className="app-container">
       <ToastContainer />
       <div className="app-header-container">
-      <Header /></div>
+        <Header />
+      </div>
 
       <div className="container">
         <div className="leftContainer">
@@ -23,7 +24,9 @@ const Store = () => {
         </div>
 
         <div className="rightContainer">
-          <span className="product-number"><small>Available products - {productData.length}</small></span>
+          <span className="product-number">
+            <small>Available products - {productData.length}</small>
+          </span>
           {!productData.length ? (
             <h2>Nothing to Show</h2>
           ) : (

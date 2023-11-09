@@ -1,18 +1,10 @@
-:root {
-  --background-color: #fff1f2;
-  --primary-color: #881337;
-  --complementary-color: #e11d48;
-  --secondary-color: #fb7185;
-  --tertiary-color: #ffe4e6;
-}
-
 /* Filter Container */
 .filter-container {
   background-color: var(--tertiary-color);
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
-  /* height */
   height: 80vh;
+  overflow-y: auto;
 }
 
 .filterHeader {
@@ -65,4 +57,21 @@
   width: 90%;
   display: flex;
   justify-content: space-between;
+}
+
+.filters-button-wrapper {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .hide-filters {
+    display: none;
+  }
+
+  .filters-button-wrapper {
+    display: block;
+    position: fixed;
+    bottom: 12px;
+    right: 40%;
+  }
 }
