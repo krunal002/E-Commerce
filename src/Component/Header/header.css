@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 
-:root {
-  --background-color: #fff1f2;
-  --primary-color: #881337;
-  --complementary-color: #e11d48;
-  --secondary-color: #fb7185;
-  --tertiary-color: #ffe4e6;
-}
-
 .header {
   color: var(--primary-color);
   display: flex;
@@ -22,10 +14,10 @@
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 .header h1::first-letter {
-    background-color: var(--primary-color);
-    padding: 0 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+  background-color: var(--primary-color);
+  padding: 0 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   color: var(--background-color);
   font-size: 3rem;
 }
@@ -45,4 +37,38 @@
   margin: 0 0 0 2rem;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .header{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header h1::first-letter {
+    background-color: var(--primary-color);
+    padding: 0 5px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: var(--background-color);
+    font-size: 1.5rem;
+  }
+
+  .headerLink {
+    font-size: small;
+    margin: 0 1rem;
+    color: var(--complementary-color);
+    text-decoration: none;
+  }
+
+  .headerButton {
+    color: var(--background-color);
+    background-color: var(--complementary-color);
+    border: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0 0 6px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
