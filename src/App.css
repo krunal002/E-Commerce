@@ -1,3 +1,11 @@
+:root {
+  --background-color: #fff1f2;
+  --primary-color: #881337;
+  --complementary-color: #e11d48;
+  --secondary-color: #fb7185;
+  --tertiary-color: #ffe4e6;
+}
+
 body {
   position: relative;
   background-color: #fff1f2;

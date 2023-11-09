@@ -99,3 +99,41 @@
   transform: scale(1.03);
   box-shadow: 1px 1px 4px 2px gray;
 }
+
+
+
+
+/* responsive */
+@media (max-width: 940px){
+  .category-info p {
+    display: none;
+  }
+
+  .storeRoute-heading{
+    font-size: larger;
+  }
+}
+
+
+@media (max-width: 600px) {
+  * {
+    font-size: small;
+  }
+
+  .showCategory, .collectionContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: small;
+  }
+
+  .category-info p {
+    display: none;
+  }
+
+  .storeRoute-heading{
+    font-size: medium;
+  }
+
+
+}
