@@ -72,6 +72,6 @@
     display: block;
     position: fixed;
     bottom: 12px;
-    right: 40%;
+    padding: 0 37%;
   }
 }

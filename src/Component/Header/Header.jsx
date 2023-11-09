@@ -12,7 +12,7 @@ const Header = () => {
         </div>
 
         <div>
-          <div>
+          <div className="header-link-wrapper">
             {/* search */}
             <Link to="/search" className="headerLink">
               <i class="fa fa-search" aria-hidden="true"></i>

@@ -1,53 +1,59 @@
 .loginContainer {
-    text-align: left;
-    display: block;
-    margin: 2rem auto;
-    max-width: 350px;
-    color: slategray;
-    background-color: whitesmoke;
-    padding: 2rem 1rem;
-    border-right: 2px solid orange;
-    border-top-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    box-shadow: 2px 2px 7px 5px gray;
+  text-align: left;
+  display: block;
+  margin: 2rem auto;
+  max-width: 350px;
+  color: slategray;
+  background-color: whitesmoke;
+  padding: 2rem 1rem;
+  border-right: 2px solid orange;
+  border-top-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  box-shadow: 2px 2px 7px 5px gray;
 }
 
-.loginInput, .inputLabel{
-    display: block;
-    margin: auto;
+.loginInput,
+.inputLabel {
+  display: block;
+  margin: auto;
+  width: 80%;
+}
+
+.inputLabel {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.loginInput {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+.signInButton {
+  background-color: slategray;
+  color: white;
+  display: block;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.loginButton {
+  background-color: slategray;
+  color: white;
+  margin: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .loginContainer {
     width: 80%;
-}
-
-.inputLabel{
-    font-weight: bold;
-    margin-bottom: 2px;
-}
-
-.loginInput {    
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid lightgray;
-}
-
-
-.signInButton{
-    background-color: slategray;
-    color: white;
-    display: block;
-    margin: 0.5rem auto;
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.loginButton{
-    background-color: slategray;
-    color: white;
-    margin: 0.5rem ;
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+  }
 }

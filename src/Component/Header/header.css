@@ -41,7 +41,7 @@
 
 /* responsive */
 @media (max-width: 600px) {
-  .header{
+  .header {
     display: flex;
     flex-direction: column;
   }

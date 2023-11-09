@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 
 const Filters = () => {
   const { dispatch, state } = useContext(ProductContext);
-  const [hideFilters, setHideFilters] = React.useState(false);
+  const [hideFilters, setHideFilters] = React.useState(true);
 
   return (
     <div>
@@ -224,7 +224,7 @@ const Filters = () => {
           color="warning"
           onClick={() => setHideFilters(!hideFilters)}
         >
-          Filters
+          {hideFilters ? "Filters" : "Hide Filters"}
         </Button>
       </div>
     </div>
