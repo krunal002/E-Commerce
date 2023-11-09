@@ -56,7 +56,7 @@
   }
 
   .headerLink {
-    font-size: small;
+    font-size: medium;
     margin: 0 1rem;
     color: var(--complementary-color);
     text-decoration: none;
