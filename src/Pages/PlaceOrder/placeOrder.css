@@ -60,3 +60,20 @@ form {
 .address-input:focus{
   outline: none;
 }
+
+@media(max-width:600px){
+  .placeOrder-primary-container{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+  }
+
+  .address-input {
+    display: block;
+    width: 200px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}

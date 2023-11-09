@@ -19,10 +19,10 @@
 
 .leftCartContainer::-webkit-scrollbar {
   width: 1px;
-  background-color: var(--background-color); /* Change the track's background color */
+  background-color: var(
+    --background-color
+  ); /* Change the track's background color */
 }
-
-
 
 /* Cart with products */
 .cart-product-container {
@@ -100,20 +100,19 @@
   background-color: var(--tertiary-color);
   box-shadow: 1px 1px 3px 2px gray;
 }
-.placeorder-container h3{
-    color: var(--complementary-color);
-    margin: 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid;
-    text-align: center;
+.placeorder-container h3 {
+  color: var(--complementary-color);
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid;
+  text-align: center;
 }
-.placeorder-container span{
-    margin-top: 2rem;
-    padding: 1rem 0.5rem;
-    border-top: 1px solid;
-    text-align: center;
+.placeorder-container span {
+  margin-top: 2rem;
+  padding: 1rem 0.5rem;
+  border-top: 1px solid;
+  text-align: center;
 }
-
 
 .final {
   display: flex;
@@ -128,21 +127,20 @@
   border-radius: 0.5rem;
   cursor: pointer;
 }
-.placeorder-button p{
-    font-size: large;
-    margin: 0;
-    padding: 0.7rem;
-
+.placeorder-button p {
+  font-size: large;
+  margin: 0;
+  padding: 0.7rem;
 }
 
-@media(max-width:600px){
-  .cartContainer{
+@media (max-width: 600px) {
+  .cartContainer {
     display: flex;
     flex-direction: column;
     width: 80%;
   }
 
-  .cart-product-container{
+  .cart-product-container {
     display: flex;
     flex-direction: column;
     gap: 16px;

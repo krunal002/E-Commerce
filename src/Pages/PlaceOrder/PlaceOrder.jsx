@@ -4,7 +4,6 @@ import { useContext, useState } from "react";
 
 import { CartContext } from "../../E-Commerse";
 import Header from "../../Component/Header/Header";
-// import { Header } from "../../Component/Header/Header"
 
 const PlaceOrder = () => {
   const { cartData } = useContext(CartContext);
@@ -17,28 +16,6 @@ const PlaceOrder = () => {
   const totalPtice = Math.round(price - price / 4);
   const priceSave = price - totalPtice;
 
-  // const address = [
-  //   {
-  //     name: "Raghav Pande",
-  //     add: "Gokul peth, bhandewadi, Nagpur",
-  //     pin: "pin : 444444",
-  //     mobile: "Mo : +91 9420247486",
-  //   },
-  //   {
-  //     name: "Saniya Rakhe",
-  //     add: "Pratap nagar, ram temple, Wardha",
-  //     pin: "pin : 555555",
-  //     mobile: "Mo : +91 8999908645",
-  //   },
-  //   {
-  //     name: "Nayan Handekar",
-  //     add: "pavan naka, janewadi, Amravati",
-  //     pin: "pin : 777777",
-  //     mobile: "Mo : +91 9130112665",
-  //   },
-  // ];
-
-  // chat GPT
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -72,7 +49,7 @@ const PlaceOrder = () => {
           <label className="address-label">
             First Name:
             <input
-              className="address-input"
+              className="address-input address"
               type="text"
               name="firstName"
               value={formData.firstName}
@@ -80,7 +57,7 @@ const PlaceOrder = () => {
             />
           </label>
 
-          <label className="address-label">
+          <label className="address-label address">
             Last Name:
             <input
               className="address-input"
@@ -91,7 +68,7 @@ const PlaceOrder = () => {
             />
           </label>
 
-          <label className="address-label">
+          <label className="address-label address" >
             Address Line 1:
             <input
               className="address-input"
@@ -102,7 +79,7 @@ const PlaceOrder = () => {
             />
           </label>
 
-          <label className="address-label">
+          <label className="address-label address">
             Address Line 2:
             <input
               className="address-input"
@@ -113,7 +90,7 @@ const PlaceOrder = () => {
             />
           </label>
 
-          <label className="address-label">
+          <label className="address-label address">
             City:
             <input
               className="address-input"
@@ -124,7 +101,7 @@ const PlaceOrder = () => {
             />
           </label>
 
-          <label className="address-label">
+          <label className="address-label address">
             State:
             <input
               className="address-input"
@@ -135,7 +112,7 @@ const PlaceOrder = () => {
             />
           </label>
 
-          <label className="address-label">
+          <label className="address-label address">
             Postal Code:
             <input
               className="address-input"
@@ -146,7 +123,7 @@ const PlaceOrder = () => {
             />
           </label>
 
-          <label className="address-label">
+          <label className="address-label address">
             Country:
             <input
               className="address-input"
