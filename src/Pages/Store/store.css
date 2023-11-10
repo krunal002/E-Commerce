@@ -1,9 +1,12 @@
 .container {
   display: flex;
   padding: 1rem;
+  gap: 1rem;
 }
 
 .leftContainer {
+  background-color: var(--tertiary-color);
+  border-radius: 0.5rem;
   text-align: left;
   flex: 20%;
   padding: 0 1rem;
