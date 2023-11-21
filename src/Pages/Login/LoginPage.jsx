@@ -10,7 +10,7 @@ const LoginPage = () => {
   const { state, testUser, loginHandler, dispatch, token, logout, currUser } =
     useContext(LoginContext);
   const { firstName, lastName, email } = currUser;
-
+  console.log("Current User : ", currUser);
   const check = state.email.length>0 && state.password.length>0;
 
   return (
