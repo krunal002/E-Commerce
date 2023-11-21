@@ -72,6 +72,8 @@ export const LoginContextHandler = ({ children }) => {
       localStorage.setItem("user", JSON.stringify(result.foundUser));
       navigate(location?.state?.from?.pathname);
       notify();
+
+      console.log("Result : ", result);
     } catch (e) {
       console.log("Test user login error : ", e);
     }
